@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import type { Service } from '../../types';
-import { Button } from '../ui/Button';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
+import { Button } from '../ui/Button';
 
 interface ServiceCardProps {
   service: Service;
@@ -21,8 +21,8 @@ export function ServiceCard({
   return (
     <article
       id={`service-${service.id}`}
-      className={`card-dark group flex flex-col overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand-pink/40 hover:shadow-card-hover ${
-        isFocused ? 'border-brand-pink/50 shadow-glow ring-2 ring-brand-pink/40 -translate-y-1' : ''
+      className={`group flex flex-col overflow-hidden rounded-lg glass transition-all duration-300 ease-in-out hover:scale-[1.02] hover:border-amber-gold/50 hover:shadow-lg hover:shadow-amber-gold/5 ${
+        isFocused ? 'ring-2 ring-amber-gold/60 scale-[1.02]' : ''
       }`}
     >
       <div className="relative overflow-hidden">
@@ -32,20 +32,20 @@ export function ServiceCard({
           variant="service"
           imgClassName="transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-pink/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
-        <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-brand-pink/30 bg-elevated/90 text-xs font-bold text-brand-pink-light shadow-glow-sm">
+        <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient}`} />
+        <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-obsidian/70 text-xs font-semibold text-amber-gold backdrop-blur-sm border border-amber-gold/30">
           {String(index + 1).padStart(2, '0')}
         </span>
-        <div className="icon-badge absolute bottom-4 right-4 h-12 w-12 rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow">
-          <Icon className="h-6 w-6" />
+        <div className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-lg border border-amber-gold/30 bg-obsidian/70 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-amber-gold/60">
+          <Icon className="h-6 w-6 text-amber-gold" />
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-serif text-xl font-semibold text-ink transition-colors duration-300 group-hover:text-brand-pink-light md:text-2xl">
+        <h3 className="font-serif text-xl font-semibold text-pearl md:text-2xl">
           {service.title}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted md:text-base">
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-muted md:text-base">
           {service.description}
         </p>
         <Button
@@ -55,7 +55,7 @@ export function ServiceCard({
           className="mt-6 w-full sm:w-auto"
         >
           View Portfolio
-          <ArrowRight className="h-4 w-4" />
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
         </Button>
       </div>
     </article>

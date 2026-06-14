@@ -6,34 +6,30 @@ import { ServiceCard } from './ServiceCard';
 
 interface ServicesGridProps {
   onFocusComplete: () => void;
+  showBackLink?: boolean;
 }
 
-export function ServicesGrid({ onFocusComplete }: ServicesGridProps) {
+export function ServicesGrid({ onFocusComplete, showBackLink = true }: ServicesGridProps) {
   const { focusedServiceId, goToService, setActiveView } = useApp();
 
   useFocusService(focusedServiceId, onFocusComplete);
 
   return (
-    <section className="mx-auto max-w-content px-4 py-[2.4rem] md:px-8 md:py-[3.6rem] lg:px-12 view-transition">
+    <section className="mx-auto max-w-content px-4 py-16 md:px-8 md:py-24 lg:px-12 view-transition">
       <SectionHeading
-        badge="Specialty shoots"
-        title="Photography Services"
-        subtitle="Need something specific? Browse our specialty services — or book any custom shoot instantly via the app."
+        title="Our Services"
+        subtitle="Ten professional photography specialties — each delivered by verified Snappio photographers with portfolio-grade results."
       />
 
-      <div className="mb-12 flex flex-wrap justify-center gap-2 md:gap-3">
+      <div className="mb-10 flex flex-wrap justify-center gap-3">
         {services.map((service, i) => (
           <button
             key={service.id}
             type="button"
             onClick={() => goToService(service.id)}
-            className={
-              focusedServiceId === service.id
-                ? 'chip chip-active text-xs md:text-sm'
-                : 'chip text-xs md:text-sm'
-            }
+            className="rounded-full border border-slate-700 bg-slate-900/40 px-4 py-1.5 text-xs font-medium text-slate-muted transition-all duration-300 hover:border-amber-gold/50 hover:text-pearl md:text-sm"
           >
-            {i + 1}. {service.title}
+            {String(i + 1).padStart(2, '0')}. {service.title.split(' ')[0]}
           </button>
         ))}
       </div>
@@ -50,15 +46,17 @@ export function ServicesGrid({ onFocusComplete }: ServicesGridProps) {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
-        <button
-          type="button"
-          onClick={() => setActiveView('home')}
-          className="link-subtle"
-        >
-          ← Back to Home
-        </button>
-      </div>
+      {showBackLink && (
+        <div className="mt-12 text-center">
+          <button
+            type="button"
+            onClick={() => setActiveView('home')}
+            className="text-sm text-slate-muted transition-colors duration-300 hover:text-amber-gold"
+          >
+            ← Back to Home
+          </button>
+        </div>
+      )}
     </section>
   );
 }

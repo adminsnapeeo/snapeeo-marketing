@@ -16,74 +16,74 @@ export const services: Service[] = [
   {
     id: 'pre-wedding',
     title: 'Pre-wedding Shoots',
-    description: 'Romantic storytelling in stunning locations.',
+    description: 'Romantic storytelling in stunning locations across Jaipur and beyond.',
     icon: Sparkles,
-    gradient: 'from-pink-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(1),
+    gradient: 'from-brand-navy-mid via-surface to-canvas',
+    image: getStaticPhoto(0),
   },
   {
     id: 'birthday',
     title: 'Birthday Photography',
-    description: 'Capturing the joy of milestone celebrations.',
+    description: 'Capturing the joy of milestone celebrations with vibrant, candid shots.',
     icon: Cake,
-    gradient: 'from-amber-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(2),
+    gradient: 'from-brand-pink/40 via-surface to-canvas',
+    image: getStaticPhoto(1),
   },
   {
     id: 'maternity',
     title: 'Maternity Shoots',
-    description: 'Elegant, fine-art celebration of motherhood.',
+    description: 'Elegant, fine-art celebration of motherhood in beautiful settings.',
     icon: Star,
-    gradient: 'from-purple-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(0),
+    gradient: 'from-brand-navy-light via-surface to-canvas',
+    image: getStaticPhoto(2),
   },
   {
     id: 'baby',
     title: 'Baby Shoots',
-    description: 'Adorable, gentle newborn and toddler portraits.',
+    description: 'Adorable, gentle newborn and toddler portraits you will treasure forever.',
     icon: Baby,
-    gradient: 'from-sky-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(1),
+    gradient: 'from-brand-pink-light/30 via-surface to-canvas',
+    image: getStaticPhoto(0),
   },
   {
     id: 'corporate',
     title: 'Corporate Events',
-    description: 'Professional coverage for conferences, galas, and PR.',
+    description: 'Professional coverage for conferences, galas, and brand launches.',
     icon: Briefcase,
-    gradient: 'from-slate-700/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(2),
+    gradient: 'from-brand-navy-mid via-surface to-canvas',
+    image: getStaticPhoto(1),
   },
   {
     id: 'fashion',
     title: 'Fashion Portfolio Shoots',
-    description: 'High-fashion editorial styles for models & designers.',
+    description: 'High-fashion editorial styles for models, designers, and creators.',
     icon: Camera,
-    gradient: 'from-fuchsia-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(0),
+    gradient: 'from-brand-pink/50 via-surface to-canvas',
+    image: getStaticPhoto(2),
   },
   {
     id: 'product',
     title: 'Product Photography',
-    description: 'Crisp, commercial e-commerce product imagery.',
+    description: 'Crisp, commercial e-commerce and catalog product imagery.',
     icon: Package,
-    gradient: 'from-emerald-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(1),
+    gradient: 'from-brand-navy-light via-surface to-canvas',
+    image: getStaticPhoto(0),
   },
   {
     id: 'influencer',
     title: 'Influencer Content Creation',
-    description: 'Trendy, social-first aesthetics for creators.',
+    description: 'Trendy, social-first aesthetics tailored for creators and brands.',
     icon: Users,
-    gradient: 'from-orange-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(2),
+    gradient: 'from-brand-pink-light/40 via-surface to-canvas',
+    image: getStaticPhoto(1),
   },
   {
     id: 'real-estate',
     title: 'Real Estate Photography',
-    description: 'Wide-angle, high-dynamic-range interior & exterior shoots.',
+    description: 'Wide-angle, high-dynamic-range interior and exterior property shoots.',
     icon: Building2,
-    gradient: 'from-teal-900/60 via-obsidian/80 to-obsidian',
-    image: getStaticPhoto(0),
+    gradient: 'from-brand-navy-mid via-surface to-canvas',
+    image: getStaticPhoto(2),
   },
 ];
 
@@ -91,49 +91,49 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 'g1',
     src: getStaticPhoto(0),
-    alt: 'Hawa Mahal architectural photography',
+    alt: 'Hawa Mahal landmark photography',
     category: 'Travel',
   },
   {
     id: 'g2',
     src: getStaticPhoto(1),
-    alt: 'Jantar Mantar heritage landmark shoot',
+    alt: 'Jantar Mantar architectural shoot',
     category: 'Travel',
   },
   {
     id: 'g3',
     src: getStaticPhoto(2),
-    alt: 'Professional male portrait',
-    category: 'Portraits',
+    alt: 'Jaipur heritage monument portrait',
+    category: 'Travel',
   },
   {
     id: 'g4',
     src: getStaticPhoto(0),
-    alt: 'Natural light female portrait',
+    alt: 'Natural light portrait session',
     category: 'Portraits',
   },
   {
     id: 'g5',
-    src: getStaticPhoto(0),
-    alt: 'Commercial retail photography',
+    src: getStaticPhoto(1),
+    alt: 'Commercial brand photography',
     category: 'Commercial',
   },
   {
     id: 'g6',
-    src: getStaticPhoto(1),
-    alt: 'Historic monument travel photography',
+    src: getStaticPhoto(2),
+    alt: 'Travel photography at historic site',
     category: 'Travel',
   },
   {
     id: 'g7',
-    src: getStaticPhoto(2),
+    src: getStaticPhoto(0),
     alt: 'Editorial portrait session',
     category: 'Portraits',
   },
   {
     id: 'g8',
     src: getStaticPhoto(1),
-    alt: 'Corporate brand photography',
+    alt: 'Product and commercial shoot',
     category: 'Commercial',
   },
 ];
@@ -157,17 +157,17 @@ export const serviceTeasers = [
 export const appFeatures = [
   {
     title: 'Instant Booking',
-    description: 'Find available photographers near you and confirm your shoot in under 60 seconds.',
+    description: 'Schedule professional shoots in seconds with real-time availability.',
     icon: 'calendar' as const,
   },
   {
-    title: 'Live Availability',
-    description: 'See real-time slots, pricing, and photographer ratings before you book.',
+    title: 'AI Photo Delivery',
+    description: 'Receive curated, edited galleries powered by intelligent sorting.',
     icon: 'sparkles' as const,
   },
   {
-    title: 'Direct Chat',
-    description: 'Message your photographer instantly to discuss location, style, and timing.',
+    title: 'Direct Chat with Photographers',
+    description: 'Communicate seamlessly with your photographer before and after shoots.',
     icon: 'message' as const,
   },
 ];
@@ -175,47 +175,50 @@ export const appFeatures = [
 export const howItWorksSteps = [
   {
     step: '01',
-    title: 'Search & Compare',
-    description: 'Enter your location and shoot type. Browse verified photographers with live availability.',
-    color: 'from-brand-navy to-brand-navy-mid',
+    title: 'Search Nearby',
+    description: 'Enter your location and see verified photographers available right now.',
+    color: 'from-brand-navy-mid to-brand-navy-light',
   },
   {
     step: '02',
     title: 'Book Instantly',
-    description: 'Pick a time slot, confirm details, and secure your photographer in one tap.',
-    color: 'from-brand-navy-mid to-brand-navy-light',
+    description: 'Pick a time slot, confirm in seconds — no emails or waiting.',
+    color: 'from-brand-navy-light to-brand-pink',
   },
   {
     step: '03',
-    title: 'Shoot Day',
-    description: 'Your photographer arrives on time. Chat, coordinate, and capture the moment.',
-    color: 'from-brand-navy-light to-brand-pink',
+    title: 'Shoot & Chat',
+    description: 'Meet your photographer and coordinate details in-app.',
+    color: 'from-brand-pink to-brand-pink-light',
   },
   {
     step: '04',
     title: 'Get Your Photos',
-    description: 'Receive AI-curated, edited galleries delivered straight to your phone.',
-    color: 'from-brand-pink to-brand-pink-light',
+    description: 'Edited galleries delivered straight to your phone.',
+    color: 'from-brand-pink-light to-brand-navy-light',
   },
 ];
 
 export const testimonials = [
   {
-    name: 'Priya Sharma',
-    role: 'Booked a portrait shoot',
-    quote: 'I booked a photographer in Jaipur within 2 minutes. Photos were delivered the same evening!',
+    name: 'Ananya Sharma',
+    role: 'Booked in Jaipur',
+    quote:
+      'Booked a photographer in under a minute before our trip to Hawa Mahal. Photos were stunning and delivered the same evening.',
     rating: 5,
   },
   {
     name: 'Rahul Mehta',
-    role: 'Corporate event coverage',
-    quote: 'Snapeeo made last-minute event photography effortless. Professional quality, zero hassle.',
+    role: 'Corporate event client',
+    quote:
+      'Snapeeo made our product launch coverage effortless. Real-time booking and professional results — highly recommend.',
     rating: 5,
   },
   {
-    name: 'Ananya Kapoor',
-    role: 'Travel photography',
-    quote: 'The instant booking feature is a game-changer. Found an amazing photographer at Hawa Mahal on the spot.',
+    name: 'Priya Kapoor',
+    role: 'Pre-wedding shoot',
+    quote:
+      'Found the perfect photographer for our pre-wedding shoot. The app chat feature made planning so easy.',
     rating: 5,
   },
 ];
@@ -223,22 +226,27 @@ export const testimonials = [
 export const faqs = [
   {
     question: 'How fast can I book a photographer?',
-    answer: 'Most bookings are confirmed instantly. Search by location, pick an available slot, and you\'re done in under 60 seconds.',
+    answer:
+      'Most bookings take under 60 seconds. Search your city, pick an available photographer, and confirm instantly.',
   },
   {
-    question: 'Are all photographers verified?',
-    answer: 'Yes. Every Snapeeo photographer passes identity verification, portfolio review, and client rating checks.',
+    question: 'Are Snapeeo photographers verified?',
+    answer:
+      'Yes. Every photographer on Snapeeo passes identity verification, portfolio review, and background checks.',
+  },
+  {
+    question: 'When do I receive my photos?',
+    answer:
+      'Delivery times vary by shoot type. Many sessions deliver edited galleries within 24–48 hours directly in the app.',
   },
   {
     question: 'Can I chat with my photographer before the shoot?',
-    answer: 'Absolutely. Once booked, you can message your photographer directly in the app to discuss details.',
+    answer:
+      'Absolutely. Use in-app chat to share location details, shot lists, outfit ideas, and timing before your session.',
   },
   {
-    question: 'What photography services are available?',
-    answer: 'From portraits and events to product and travel shoots — browse our full service list or book any custom session.',
-  },
-  {
-    question: 'How do I receive my photos?',
-    answer: 'Edited galleries are delivered to your app with AI-powered sorting. Download and share instantly.',
+    question: 'Which cities is Snapeeo available in?',
+    answer:
+      'Snapeeo is live in 50+ cities worldwide, including Jaipur, Delhi, Mumbai, Bangalore, and expanding rapidly.',
   },
 ];
