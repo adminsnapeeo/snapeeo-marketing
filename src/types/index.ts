@@ -32,7 +32,7 @@ export interface LightboxState {
 
 export interface AppContextValue {
   activeView: ViewId;
-  setActiveView: (view: ViewId) => void;
+  setActiveView: (view: ViewId, sectionId?: string) => void;
   focusedServiceId: string | null;
   goToService: (serviceId: string) => void;
   scrollToSection: (sectionId: string) => void;

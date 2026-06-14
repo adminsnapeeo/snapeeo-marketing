@@ -32,7 +32,9 @@ export function ServiceCard({
           variant="service"
           imgClassName="transition-transform duration-500 group-hover:scale-110"
         />
-        <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient}`} />
+        <div
+          className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-70 transition-opacity duration-300 group-hover:opacity-85`}
+        />
         <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-obsidian/70 text-xs font-semibold text-amber-gold backdrop-blur-sm border border-amber-gold/30">
           {String(index + 1).padStart(2, '0')}
         </span>

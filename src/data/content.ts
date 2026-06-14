@@ -18,7 +18,7 @@ export const services: Service[] = [
     title: 'Pre-wedding Shoots',
     description: 'Romantic storytelling in stunning locations across Jaipur and beyond.',
     icon: Sparkles,
-    gradient: 'from-brand-navy-mid via-surface to-canvas',
+    gradient: 'from-brand-navy-mid/90 via-brand-navy/25 to-transparent',
     image: getStaticPhoto(0),
   },
   {
@@ -26,7 +26,7 @@ export const services: Service[] = [
     title: 'Birthday Photography',
     description: 'Capturing the joy of milestone celebrations with vibrant, candid shots.',
     icon: Cake,
-    gradient: 'from-brand-pink/40 via-surface to-canvas',
+    gradient: 'from-brand-pink/70 via-brand-navy/20 to-transparent',
     image: getStaticPhoto(1),
   },
   {
@@ -34,7 +34,7 @@ export const services: Service[] = [
     title: 'Maternity Shoots',
     description: 'Elegant, fine-art celebration of motherhood in beautiful settings.',
     icon: Star,
-    gradient: 'from-brand-navy-light via-surface to-canvas',
+    gradient: 'from-brand-navy-light/85 via-brand-navy/25 to-transparent',
     image: getStaticPhoto(2),
   },
   {
@@ -42,7 +42,7 @@ export const services: Service[] = [
     title: 'Baby Shoots',
     description: 'Adorable, gentle newborn and toddler portraits you will treasure forever.',
     icon: Baby,
-    gradient: 'from-brand-pink-light/30 via-surface to-canvas',
+    gradient: 'from-brand-pink-light/60 via-brand-navy/20 to-transparent',
     image: getStaticPhoto(0),
   },
   {
@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: 'Corporate Events',
     description: 'Professional coverage for conferences, galas, and brand launches.',
     icon: Briefcase,
-    gradient: 'from-brand-navy-mid via-surface to-canvas',
+    gradient: 'from-brand-navy-mid/90 via-brand-navy/25 to-transparent',
     image: getStaticPhoto(1),
   },
   {
@@ -58,7 +58,7 @@ export const services: Service[] = [
     title: 'Fashion Portfolio Shoots',
     description: 'High-fashion editorial styles for models, designers, and creators.',
     icon: Camera,
-    gradient: 'from-brand-pink/50 via-surface to-canvas',
+    gradient: 'from-brand-pink/65 via-brand-navy/20 to-transparent',
     image: getStaticPhoto(2),
   },
   {
@@ -66,7 +66,7 @@ export const services: Service[] = [
     title: 'Product Photography',
     description: 'Crisp, commercial e-commerce and catalog product imagery.',
     icon: Package,
-    gradient: 'from-brand-navy-light via-surface to-canvas',
+    gradient: 'from-brand-navy-light/85 via-brand-navy/25 to-transparent',
     image: getStaticPhoto(0),
   },
   {
@@ -74,7 +74,7 @@ export const services: Service[] = [
     title: 'Influencer Content Creation',
     description: 'Trendy, social-first aesthetics tailored for creators and brands.',
     icon: Users,
-    gradient: 'from-brand-pink-light/40 via-surface to-canvas',
+    gradient: 'from-brand-pink-light/60 via-brand-navy/20 to-transparent',
     image: getStaticPhoto(1),
   },
   {
@@ -82,7 +82,7 @@ export const services: Service[] = [
     title: 'Real Estate Photography',
     description: 'Wide-angle, high-dynamic-range interior and exterior property shoots.',
     icon: Building2,
-    gradient: 'from-brand-navy-mid via-surface to-canvas',
+    gradient: 'from-brand-navy-mid/90 via-brand-navy/25 to-transparent',
     image: getStaticPhoto(2),
   },
 ];

@@ -15,24 +15,19 @@ import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { ServicesGrid } from './components/services/ServicesGrid';
 import { AppContext } from './context/AppContext';
-import { useScrollToSection } from './hooks';
-import type { AppContextValue, LightboxState, ViewId } from './types';
+import { useAppNavigation } from './hooks';
+import type { AppContextValue, LightboxState } from './types';
 
 function App() {
-  const [activeView, setActiveView] = useState<ViewId>('home');
-  const [focusedServiceId, setFocusedServiceId] = useState<string | null>(null);
+  const {
+    activeView,
+    setActiveView,
+    focusedServiceId,
+    goToService,
+    clearFocusedService,
+    scrollToSection,
+  } = useAppNavigation();
   const [lightbox, setLightbox] = useState<LightboxState>({ open: false, index: 0 });
-
-  const scrollToSection = useScrollToSection();
-
-  const goToService = useCallback((serviceId: string) => {
-    setFocusedServiceId(serviceId);
-    setActiveView('services');
-  }, []);
-
-  const clearFocusedService = useCallback(() => {
-    setFocusedServiceId(null);
-  }, []);
 
   const openLightbox = useCallback((index: number) => {
     setLightbox({ open: true, index });
@@ -60,6 +55,7 @@ function App() {
     }),
     [
       activeView,
+      setActiveView,
       focusedServiceId,
       goToService,
       scrollToSection,

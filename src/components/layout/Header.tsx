@@ -15,18 +15,11 @@ const navItems: { label: string; view: ViewId; sectionId?: string }[] = [
 ];
 
 export function Header() {
-  const { activeView, setActiveView, scrollToSection } = useApp();
+  const { activeView, setActiveView } = useApp();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleNavigate = (view: ViewId, sectionId?: string) => {
-    setActiveView(view);
-    if (sectionId) {
-      setTimeout(() => scrollToSection(sectionId), 300);
-    } else {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 0);
-    }
+    setActiveView(view, sectionId);
   };
 
   const isNavActive = (view: ViewId, sectionId?: string) => {
