@@ -83,7 +83,7 @@ export function ResponsiveImage({
 function ImagePlaceholder({ fill = false }: { fill?: boolean }) {
   return (
     <div
-      className={`flex items-center justify-center bg-brand-navy-mid ${
+      className={`flex items-center justify-center bg-brand-pink-soft ${
         fill ? 'absolute inset-0' : 'absolute inset-0 h-full w-full'
       }`}
       aria-hidden

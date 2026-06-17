@@ -15,9 +15,10 @@ const socialLinks: { icon: SocialIcon; label: string; href: string }[] = [
 interface SocialBarProps {
   className?: string;
   vertical?: boolean;
+  light?: boolean;
 }
 
-export function SocialBar({ className = '', vertical = false }: SocialBarProps) {
+export function SocialBar({ className = '', vertical = false, light = false }: SocialBarProps) {
   return (
     <div
       className={`flex ${vertical ? 'flex-col gap-4' : 'items-center gap-3'} ${className}`}
@@ -29,7 +30,9 @@ export function SocialBar({ className = '', vertical = false }: SocialBarProps) 
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="icon-badge h-9 w-9 rounded-lg transition-all duration-300 hover:scale-110 active:scale-95"
+          className={`icon-badge h-10 w-10 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 ${
+            light ? 'icon-badge-on-pink !bg-white/20' : ''
+          }`}
         >
           <Icon className="h-4 w-4" />
         </a>

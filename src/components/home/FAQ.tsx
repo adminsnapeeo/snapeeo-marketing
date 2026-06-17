@@ -10,8 +10,8 @@ export function FAQ() {
     <section id="faq" className="section-base scroll-mt-24">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
-          badge="FAQ"
-          title="Questions? We've Got Answers"
+          light
+          title="Questions & Answers"
           subtitle="Everything you need to know about booking photographers on Snapeeo."
         />
 
@@ -21,23 +21,25 @@ export function FAQ() {
             return (
               <div
                 key={faq.question}
-                className={`card-dark overflow-hidden transition-all duration-300 ${isOpen ? 'border-brand-pink/30 shadow-glow-sm' : ''}`}
+                className={`overflow-hidden rounded-3xl transition-all duration-300 ${
+                  isOpen ? 'bg-white/20' : 'bg-white/10'
+                }`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-all duration-300 hover:bg-brand-pink/5 active:bg-brand-pink/10"
+                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                 >
-                  <span className={`font-semibold transition-colors duration-300 ${isOpen ? 'text-brand-pink-light' : 'text-ink'}`}>
-                    {faq.question}
-                  </span>
+                  <span className="text-base font-bold text-white md:text-lg">{faq.question}</span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 text-brand-pink' : 'text-ink-muted'}`}
+                    className={`h-5 w-5 shrink-0 text-white transition-transform duration-300 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-white/10 bg-canvas/40 px-5 py-4">
-                    <p className="text-sm leading-relaxed text-ink-muted">{faq.answer}</p>
+                  <div className="border-t border-white/15 px-6 py-5">
+                    <p className="text-sm leading-relaxed text-white/90 md:text-base">{faq.answer}</p>
                   </div>
                 )}
               </div>

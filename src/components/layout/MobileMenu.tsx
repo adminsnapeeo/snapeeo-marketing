@@ -48,22 +48,16 @@ export function MobileMenu({ open, onClose, onNavigate, activeView }: MobileMenu
       aria-modal="true"
       aria-label="Navigation menu"
     >
-      {/* Solid backdrop — hides page content completely */}
-      <div className="absolute inset-0 bg-[#0B1D3A]" />
+      <div className="absolute inset-0 bg-brand-pink" />
 
       <div className="relative flex h-full flex-col">
-        <div className="flex justify-end px-4 py-4">
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1A3050] text-[#F8FAFC]"
-          >
-            <X className="h-5 w-5" />
+        <div className="flex justify-end px-5 py-5">
+          <button type="button" aria-label="Close menu" onClick={onClose} className="icon-badge-on-pink flex h-11 w-11 items-center justify-center rounded-full">
+            <X className="h-5 w-5 text-white" />
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col justify-center gap-1 px-6 pb-16">
+        <nav className="flex flex-1 flex-col justify-center gap-2 px-8 pb-20">
           {navItems.map((item) => {
             const isActive = activeView === item.view && !item.sectionId;
             return (
@@ -71,10 +65,10 @@ export function MobileMenu({ open, onClose, onNavigate, activeView }: MobileMenu
                 key={item.label}
                 type="button"
                 onClick={() => handleItemClick(item.view, item.sectionId)}
-                className={`rounded-lg px-4 py-4 text-left font-serif text-2xl transition-colors ${
+                className={`rounded-2xl px-5 py-4 text-left text-2xl font-bold transition-all duration-300 ${
                   isActive
-                    ? 'font-bold text-[#F472B6]'
-                    : 'font-medium text-[#F8FAFC] active:text-[#F472B6]'
+                    ? 'text-white'
+                    : 'text-white/75 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {item.label}

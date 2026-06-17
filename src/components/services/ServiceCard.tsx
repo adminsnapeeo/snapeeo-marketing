@@ -21,8 +21,8 @@ export function ServiceCard({
   return (
     <article
       id={`service-${service.id}`}
-      className={`group flex flex-col overflow-hidden rounded-lg glass transition-all duration-300 ease-in-out hover:scale-[1.02] hover:border-amber-gold/50 hover:shadow-lg hover:shadow-amber-gold/5 ${
-        isFocused ? 'ring-2 ring-amber-gold/60 scale-[1.02]' : ''
+      className={`group surface-card surface-card-hover flex flex-col overflow-hidden transition-all duration-300 ${
+        isFocused ? 'ring-2 ring-[#e94e89]/40 scale-[1.02]' : ''
       }`}
     >
       <div className="relative overflow-hidden">
@@ -30,24 +30,24 @@ export function ServiceCard({
           src={service.image}
           alt={service.title}
           variant="service"
-          imgClassName="transition-transform duration-500 group-hover:scale-110"
+          imgClassName="transition-transform duration-500 group-hover:scale-105"
         />
         <div
-          className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-70 transition-opacity duration-300 group-hover:opacity-85`}
+          className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-40 transition-opacity duration-300 group-hover:opacity-55`}
         />
-        <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-obsidian/70 text-xs font-semibold text-amber-gold backdrop-blur-sm border border-amber-gold/30">
+        <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-xs font-bold text-[#e94e89] shadow-sm">
           {String(index + 1).padStart(2, '0')}
         </span>
-        <div className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-lg border border-amber-gold/30 bg-obsidian/70 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:border-amber-gold/60">
-          <Icon className="h-6 w-6 text-amber-gold" />
+        <div className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/95 shadow-sm transition-transform duration-300 group-hover:scale-110">
+          <Icon className="h-5 w-5 text-[#e94e89]" />
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-serif text-xl font-semibold text-pearl md:text-2xl">
+        <h3 className="color-heading text-xl font-bold md:text-2xl">
           {service.title}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-muted md:text-base">
+        <p className="color-muted mt-3 flex-1 text-sm leading-relaxed md:text-base">
           {service.description}
         </p>
         <Button

@@ -5,12 +5,12 @@ import { LightboxModal } from './components/gallery/LightboxModal';
 import { AppTeaser } from './components/home/AppTeaser';
 import { DownloadBanner } from './components/home/DownloadBanner';
 import { FAQ } from './components/home/FAQ';
-import { FeaturedGallery } from './components/home/FeaturedGallery';
+import { FeatureBar } from './components/home/FeatureBar';
+import { GalleryStrip } from './components/home/GalleryStrip';
 import { Hero } from './components/home/Hero';
 import { HowItWorks } from './components/home/HowItWorks';
 import { ServicesPreview } from './components/home/ServicesPreview';
 import { Testimonials } from './components/home/Testimonials';
-import { TrustStats } from './components/home/TrustStats';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { ServicesGrid } from './components/services/ServicesGrid';
@@ -68,20 +68,23 @@ function App() {
 
   return (
     <AppContext.Provider value={contextValue}>
-      <div className="min-h-screen bg-canvas">
+      <div className="page-shell">
         <Header />
         <main key={activeView} className="view-transition">
           {activeView === 'home' && (
             <>
               <Hero />
-              <TrustStats />
-              <HowItWorks />
-              <AppTeaser />
-              <Testimonials />
-              <FeaturedGallery />
-              <ServicesPreview />
-              <FAQ />
-              <DownloadBanner />
+              <FeatureBar />
+              <GalleryStrip />
+              <div className="section-pink">
+                <HowItWorks />
+                <AppTeaser />
+                <Testimonials />
+                <ServicesPreview />
+                <FAQ />
+                <DownloadBanner />
+                <Footer onNavigate={setActiveView} embedded />
+              </div>
             </>
           )}
           {activeView === 'services' && (
@@ -90,7 +93,7 @@ function App() {
           {activeView === 'about' && <AboutSection />}
           {activeView === 'contact' && <ContactSection />}
         </main>
-        <Footer onNavigate={setActiveView} />
+        {activeView !== 'home' && <Footer onNavigate={setActiveView} />}
         <LightboxModal />
       </div>
     </AppContext.Provider>

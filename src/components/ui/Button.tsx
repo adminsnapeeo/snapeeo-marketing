@@ -1,26 +1,28 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'white';
   size?: 'sm' | 'md' | 'lg';
   children: ReactNode;
 }
 
 const variants = {
   primary:
-    'border-2 border-brand-pink/70 bg-gradient-brand text-white shadow-glow-sm hover:border-brand-pink-light hover:bg-gradient-brand-hover hover:shadow-glow active:scale-[0.97] active:shadow-glow-sm',
+    'bg-brand-pink text-white shadow-glow-sm hover:bg-brand-pink-dark hover:shadow-glow hover:-translate-y-0.5 active:scale-[0.98]',
   secondary:
-    'bg-brand-pink text-white shadow-glow-sm hover:bg-brand-pink-light hover:shadow-glow active:scale-[0.97]',
+    'bg-brand-pink-light text-white shadow-card hover:bg-brand-pink hover:-translate-y-0.5 active:scale-[0.98]',
+  white:
+    'bg-white text-brand-pink shadow-float hover:bg-brand-pink-muted hover:-translate-y-0.5 active:scale-[0.98]',
   ghost:
-    'bg-transparent text-ink hover:bg-white/8 hover:text-brand-pink-light active:bg-white/12 active:scale-[0.97]',
+    'bg-transparent text-ink-muted hover:bg-brand-pink-muted hover:text-brand-pink active:scale-[0.98]',
   outline:
-    'border-2 border-brand-pink/70 bg-transparent text-brand-pink-light hover:bg-brand-pink hover:border-brand-pink hover:text-white hover:shadow-glow-sm active:scale-[0.97]',
+    'border-2 border-brand-pink bg-transparent text-brand-pink hover:bg-brand-pink hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
 };
 
 const sizes = {
-  sm: 'px-4 py-2 text-xs',
-  md: 'px-6 py-2.5 text-sm',
-  lg: 'px-8 py-3.5 text-base',
+  sm: 'px-5 py-2.5 text-xs font-semibold',
+  md: 'px-7 py-3 text-sm font-semibold',
+  lg: 'px-9 py-4 text-base font-bold',
 };
 
 export function Button({
@@ -32,7 +34,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 ease-out hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {children}

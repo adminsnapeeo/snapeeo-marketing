@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { GlassCard } from './GlassCard';
 
 interface StatCardProps {
   value: string;
@@ -29,19 +28,19 @@ export function StatCard({ value, label }: StatCardProps) {
   }, []);
 
   return (
-    <GlassCard className="group text-center transition-all duration-300 hover:border-brand-pink/30" hover={false}>
+    <div className="card-dark group p-6 text-center transition-all duration-300 hover:shadow-card-hover md:p-8">
       <div ref={ref}>
         <p
-          className={`font-serif text-3xl font-bold gradient-text md:text-4xl transition-all duration-700 ${
+          className={`text-4xl font-bold text-highlight md:text-5xl transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
           {value}
         </p>
-        <p className="mt-2 text-sm text-ink-muted transition-colors duration-300 group-hover:text-brand-pink-light">
+        <p className="color-muted mt-3 text-sm font-medium transition-colors duration-300 group-hover:text-highlight">
           {label}
         </p>
       </div>
-    </GlassCard>
+    </div>
   );
 }

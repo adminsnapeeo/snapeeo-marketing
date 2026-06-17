@@ -4,10 +4,13 @@ import {
   Building2,
   Cake,
   Camera,
+  Globe2,
   Package,
+  Smartphone,
   Sparkles,
   Star,
   Users,
+  Zap,
 } from 'lucide-react';
 import { getStaticPhoto } from '../config/images';
 import type { GalleryItem, Service, Stat } from '../types';
@@ -18,7 +21,7 @@ export const services: Service[] = [
     title: 'Pre-wedding Shoots',
     description: 'Romantic storytelling in stunning locations across Jaipur and beyond.',
     icon: Sparkles,
-    gradient: 'from-brand-navy-mid/90 via-brand-navy/25 to-transparent',
+    gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
     image: getStaticPhoto(0),
   },
   {
@@ -26,7 +29,7 @@ export const services: Service[] = [
     title: 'Birthday Photography',
     description: 'Capturing the joy of milestone celebrations with vibrant, candid shots.',
     icon: Cake,
-    gradient: 'from-brand-pink/70 via-brand-navy/20 to-transparent',
+    gradient: 'from-brand-pink/70 via-brand-pink-soft/30 to-transparent',
     image: getStaticPhoto(1),
   },
   {
@@ -34,7 +37,7 @@ export const services: Service[] = [
     title: 'Maternity Shoots',
     description: 'Elegant, fine-art celebration of motherhood in beautiful settings.',
     icon: Star,
-    gradient: 'from-brand-navy-light/85 via-brand-navy/25 to-transparent',
+    gradient: 'from-brand-pink-light/75 via-brand-pink-soft/25 to-transparent',
     image: getStaticPhoto(2),
   },
   {
@@ -42,7 +45,7 @@ export const services: Service[] = [
     title: 'Baby Shoots',
     description: 'Adorable, gentle newborn and toddler portraits you will treasure forever.',
     icon: Baby,
-    gradient: 'from-brand-pink-light/60 via-brand-navy/20 to-transparent',
+    gradient: 'from-brand-pink-light/65 via-brand-pink-soft/30 to-transparent',
     image: getStaticPhoto(0),
   },
   {
@@ -50,7 +53,7 @@ export const services: Service[] = [
     title: 'Corporate Events',
     description: 'Professional coverage for conferences, galas, and brand launches.',
     icon: Briefcase,
-    gradient: 'from-brand-navy-mid/90 via-brand-navy/25 to-transparent',
+    gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
     image: getStaticPhoto(1),
   },
   {
@@ -58,7 +61,7 @@ export const services: Service[] = [
     title: 'Fashion Portfolio Shoots',
     description: 'High-fashion editorial styles for models, designers, and creators.',
     icon: Camera,
-    gradient: 'from-brand-pink/65 via-brand-navy/20 to-transparent',
+    gradient: 'from-brand-pink/65 via-brand-pink-soft/30 to-transparent',
     image: getStaticPhoto(2),
   },
   {
@@ -66,7 +69,7 @@ export const services: Service[] = [
     title: 'Product Photography',
     description: 'Crisp, commercial e-commerce and catalog product imagery.',
     icon: Package,
-    gradient: 'from-brand-navy-light/85 via-brand-navy/25 to-transparent',
+    gradient: 'from-brand-pink-light/75 via-brand-pink-soft/25 to-transparent',
     image: getStaticPhoto(0),
   },
   {
@@ -74,7 +77,7 @@ export const services: Service[] = [
     title: 'Influencer Content Creation',
     description: 'Trendy, social-first aesthetics tailored for creators and brands.',
     icon: Users,
-    gradient: 'from-brand-pink-light/60 via-brand-navy/20 to-transparent',
+    gradient: 'from-brand-pink-light/65 via-brand-pink-soft/30 to-transparent',
     image: getStaticPhoto(1),
   },
   {
@@ -82,7 +85,7 @@ export const services: Service[] = [
     title: 'Real Estate Photography',
     description: 'Wide-angle, high-dynamic-range interior and exterior property shoots.',
     icon: Building2,
-    gradient: 'from-brand-navy-mid/90 via-brand-navy/25 to-transparent',
+    gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
     image: getStaticPhoto(2),
   },
 ];
@@ -177,25 +180,25 @@ export const howItWorksSteps = [
     step: '01',
     title: 'Search Nearby',
     description: 'Enter your location and see verified photographers available right now.',
-    color: 'from-brand-navy-mid to-brand-navy-light',
+    color: 'from-brand-pink-light to-brand-pink',
   },
   {
     step: '02',
     title: 'Book Instantly',
     description: 'Pick a time slot, confirm in seconds — no emails or waiting.',
-    color: 'from-brand-navy-light to-brand-pink',
+    color: 'from-brand-pink-soft to-brand-pink-light',
   },
   {
     step: '03',
     title: 'Shoot & Chat',
     description: 'Meet your photographer and coordinate details in-app.',
-    color: 'from-brand-pink to-brand-pink-light',
+    color: 'from-brand-pink-light to-brand-pink',
   },
   {
     step: '04',
     title: 'Get Your Photos',
     description: 'Edited galleries delivered straight to your phone.',
-    color: 'from-brand-pink-light to-brand-navy-light',
+    color: 'from-brand-pink to-brand-pink-light',
   },
 ];
 
@@ -220,6 +223,33 @@ export const testimonials = [
     quote:
       'Found the perfect photographer for our pre-wedding shoot. The app chat feature made planning so easy.',
     rating: 5,
+  },
+];
+
+export const heroFeatures = [
+  {
+    id: 'instant-booking',
+    icon: Zap,
+    title: 'Book in seconds',
+    description:
+      'Skip the back-and-forth. Browse verified photographers near you and confirm your session instantly.',
+    stat: '60 sec avg.',
+  },
+  {
+    id: 'delivered',
+    icon: Smartphone,
+    title: 'Photos on your phone',
+    description:
+      'See who’s available right now and receive beautifully edited galleries straight in the Snapeeo app.',
+    stat: 'Same-day delivery',
+  },
+  {
+    id: 'trusted',
+    icon: Globe2,
+    title: 'Trusted everywhere',
+    description:
+      'Join thousands of happy clients who book pro photographers across cities worldwide with confidence.',
+    stat: '50+ cities',
   },
 ];
 

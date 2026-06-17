@@ -28,12 +28,12 @@ export function ServiceTeaserCards() {
               variant="teaser"
               imgClassName="transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-pink-soft/55 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-4">
-              <span className="font-serif text-lg font-semibold text-pearl md:text-xl">
+              <span className="font-serif text-lg font-semibold text-white md:text-xl">
                 {teaser.label}
               </span>
-              <ArrowRight className="h-5 w-5 text-amber-gold transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-5 w-5 text-brand-pink transition-transform duration-300 group-hover:translate-x-1" />
             </div>
           </button>
         ))}

@@ -40,7 +40,7 @@ export function LightboxModal() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-navy/95 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-white/95 backdrop-blur-md animate-fade-in"
       role="dialog"
       aria-modal="true"
       aria-label="Photo gallery lightbox"
@@ -50,7 +50,7 @@ export function LightboxModal() {
         type="button"
         onClick={closeLightbox}
         aria-label="Close lightbox"
-        className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-surface p-2 shadow-md transition-all duration-300 hover:scale-110 md:right-8 md:top-8"
+        className="absolute right-4 top-4 z-10 rounded-full border border-brand-pink/15 bg-surface p-2 shadow-card transition-all duration-300 hover:scale-110 hover:border-brand-pink/35 md:right-8 md:top-8"
       >
         <X className="h-6 w-6 text-brand-pink-light" />
       </button>
@@ -59,7 +59,7 @@ export function LightboxModal() {
         type="button"
         onClick={(e) => { e.stopPropagation(); goPrev(); }}
         aria-label="Previous photo"
-        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/10 bg-surface p-3 shadow-md transition-all duration-300 hover:scale-110 md:left-8"
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-brand-pink/15 bg-surface p-3 shadow-card transition-all duration-300 hover:scale-110 hover:border-brand-pink/35 md:left-8"
       >
         <ChevronLeft className="h-6 w-6 text-brand-pink-light" />
       </button>
@@ -74,7 +74,7 @@ export function LightboxModal() {
           src={item.src}
           alt={item.alt}
           variant="lightbox"
-          className="mx-auto overflow-hidden rounded-2xl border border-white/10"
+          className="mx-auto overflow-hidden rounded-2xl border border-brand-pink/15 shadow-card"
         />
         <p className="mt-4 text-center text-sm text-ink-muted">
           {lightbox.index + 1} / {filteredItems.length} — {item.alt}
@@ -85,7 +85,7 @@ export function LightboxModal() {
         type="button"
         onClick={(e) => { e.stopPropagation(); goNext(); }}
         aria-label="Next photo"
-        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/10 bg-surface p-3 shadow-md transition-all duration-300 hover:scale-110 md:right-8"
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-brand-pink/15 bg-surface p-3 shadow-card transition-all duration-300 hover:scale-110 hover:border-brand-pink/35 md:right-8"
       >
         <ChevronRight className="h-6 w-6 text-brand-pink-light" />
       </button>
