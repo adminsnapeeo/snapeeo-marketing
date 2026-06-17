@@ -4,7 +4,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function Testimonials() {
   return (
-    <section className="section-base-tight">
+    <section className="section-base-tight-compact">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light

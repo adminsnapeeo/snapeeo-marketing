@@ -1,10 +1,11 @@
 import { ChevronDown } from 'lucide-react';
-import { heroImages } from '../../config/images';
+import { IMAGE_DIR } from '../../config/images';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
 import { Button } from '../ui/Button';
 
+const heroPortraitImage = `${IMAGE_DIR}/photographer.jpg`;
+
 export function Hero() {
-  const heroImage = heroImages[0];
 
   const scrollToGallery = () => {
     document.getElementById('gallery-strip')?.scrollIntoView({ behavior: 'smooth' });
@@ -37,7 +38,7 @@ export function Hero() {
             <div className="camera-frame w-full max-w-[320px] md:max-w-[360px]">
               <div className="relative mt-4 aspect-[4/5] overflow-hidden rounded-[1.25rem] md:rounded-[1.5rem]">
                 <ResponsiveImage
-                  src={heroImage}
+                  src={heroPortraitImage}
                   alt="Professional photographer"
                   variant="hero"
                   fill

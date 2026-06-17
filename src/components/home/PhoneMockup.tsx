@@ -56,10 +56,10 @@ export function PhoneMockup() {
             {photographers.map((p, i) => (
               <div
                 key={p.name}
-                className={`flex items-center gap-2.5 rounded-xl border p-2.5 transition-all ${
+                className={`flex items-center gap-2.5 rounded-xl border bg-white p-2.5 transition-all ${
                   i === 0
-                    ? 'border-brand-pink/30 bg-brand-pink-muted'
-                    : 'border-brand-pink/10 bg-surface'
+                    ? 'border-brand-pink/30'
+                    : 'border-brand-pink/10'
                 }`}
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-pink to-brand-pink-light text-[10px] font-bold text-white">
@@ -67,7 +67,7 @@ export function PhoneMockup() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1">
-                    <p className="truncate text-[11px] font-semibold text-ink">{p.name}</p>
+                    <p className="truncate text-[11px] font-semibold text-black">{p.name}</p>
                     <div className="flex items-center gap-0.5">
                       <Star className="h-2.5 w-2.5 fill-brand-pink text-brand-pink" />
                       <span className="text-[9px] text-brand-pink">{p.rating}</span>

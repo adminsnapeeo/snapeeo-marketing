@@ -7,7 +7,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-base scroll-mt-24">
+    <section id="faq" className="section-base-compact scroll-mt-24">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light

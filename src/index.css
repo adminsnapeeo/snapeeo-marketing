@@ -127,6 +127,14 @@
     @apply py-10 md:py-14;
   }
 
+  .section-base-compact {
+    @apply py-8 md:py-12 lg:py-14;
+  }
+
+  .section-base-tight-compact {
+    @apply py-6 md:py-8;
+  }
+
   .card-dark {
     @apply rounded-3xl bg-white transition-all duration-300 ease-out;
     box-shadow: 0 10px 40px -12px rgba(61, 72, 82, 0.1);

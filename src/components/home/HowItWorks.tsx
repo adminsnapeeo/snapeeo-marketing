@@ -3,7 +3,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-base scroll-mt-24 pt-16 md:pt-20">
+    <section id="how-it-works" className="section-base scroll-mt-24 pt-16 pb-8 md:pt-20 md:pb-12 lg:pb-14">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light

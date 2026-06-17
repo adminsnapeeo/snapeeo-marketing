@@ -4,7 +4,7 @@ import { Button } from '../ui/Button';
 
 export function DownloadBanner() {
   return (
-    <section className="section-base-tight pb-4">
+    <section className="pt-4 pb-12 md:pt-6 md:pb-16">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-8 rounded-3xl bg-white/15 p-8 text-center backdrop-blur-sm md:flex-row md:p-12 md:text-left">
           <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white/20">

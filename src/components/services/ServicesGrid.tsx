@@ -25,7 +25,7 @@ export function ServicesGrid({ onFocusComplete, showBackLink = true }: ServicesG
       />
 
       <div className="section-page view-transition pb-16 md:pb-24">
-        <section className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
+        <section className="mx-auto max-w-content px-4 pt-10 md:px-8 md:pt-12 lg:px-12">
           <div className="mb-10 flex flex-wrap justify-center gap-3">
             {services.map((service, i) => (
               <button

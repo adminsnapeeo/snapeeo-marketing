@@ -12,7 +12,7 @@ export function GalleryStrip() {
   return (
     <section id="gallery-strip" className="section-light relative pb-0 pt-4">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
-        <div className="flex items-end justify-center gap-3 overflow-x-auto pb-16 pt-4 md:gap-5 md:pb-24 lg:gap-6">
+        <div className="flex items-end justify-center gap-3 overflow-x-hidden pb-16 pt-4 md:gap-5 md:pb-24 lg:gap-6">
           {strip.map((item, index) => {
             const globalIndex = galleryItems.findIndex((g) => g.id === item.id);
             return (

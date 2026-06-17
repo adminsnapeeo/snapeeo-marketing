@@ -10,7 +10,7 @@ export function ServicesPreview() {
   const preview = services.slice(0, 4);
 
   return (
-    <section id="services-preview" className="section-base scroll-mt-24">
+    <section id="services-preview" className="section-base-compact scroll-mt-24">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light

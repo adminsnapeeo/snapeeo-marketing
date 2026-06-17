@@ -11,7 +11,7 @@ const iconMap = {
 
 export function AppTeaser() {
   return (
-    <section id="app-features" className="section-base scroll-mt-24">
+    <section id="app-features" className="section-base-compact scroll-mt-24">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light
