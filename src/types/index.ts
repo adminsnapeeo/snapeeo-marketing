@@ -25,9 +25,18 @@ export interface Stat {
   label: string;
 }
 
+export interface GalleryStripItem {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+export type LightboxSource = 'gallery' | 'strip';
+
 export interface LightboxState {
   open: boolean;
   index: number;
+  source: LightboxSource;
 }
 
 export interface AppContextValue {
@@ -37,7 +46,7 @@ export interface AppContextValue {
   goToService: (serviceId: string) => void;
   scrollToSection: (sectionId: string) => void;
   lightbox: LightboxState;
-  openLightbox: (index: number) => void;
+  openLightbox: (index: number, source?: LightboxSource) => void;
   closeLightbox: () => void;
   setLightboxIndex: (index: number) => void;
 }

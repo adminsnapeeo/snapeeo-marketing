@@ -16,7 +16,7 @@ import { Header } from './components/layout/Header';
 import { ServicesGrid } from './components/services/ServicesGrid';
 import { AppContext } from './context/AppContext';
 import { useAppNavigation } from './hooks';
-import type { AppContextValue, LightboxState } from './types';
+import type { AppContextValue, LightboxSource, LightboxState } from './types';
 
 function App() {
   const {
@@ -27,10 +27,10 @@ function App() {
     clearFocusedService,
     scrollToSection,
   } = useAppNavigation();
-  const [lightbox, setLightbox] = useState<LightboxState>({ open: false, index: 0 });
+  const [lightbox, setLightbox] = useState<LightboxState>({ open: false, index: 0, source: 'gallery' });
 
-  const openLightbox = useCallback((index: number) => {
-    setLightbox({ open: true, index });
+  const openLightbox = useCallback((index: number, source: LightboxSource = 'gallery') => {
+    setLightbox({ open: true, index, source });
   }, []);
 
   const closeLightbox = useCallback(() => {

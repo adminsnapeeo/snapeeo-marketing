@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { galleryItems } from '../../data/content';
+import { galleryStripItems } from '../../config/images';
+import type { GalleryStripItem } from '../../types';
 import { WaveDivider } from '../ui/WaveDivider';
 
 const AUTO_INTERVAL_MS = 3000;
@@ -9,7 +10,7 @@ const tilts = ['-rotate-6', '-rotate-2', 'rotate-0', 'rotate-3', 'rotate-6'];
 const offsets = ['translate-y-4', 'translate-y-0', '-translate-y-2', 'translate-y-2', 'translate-y-6'];
 
 type PolaroidProps = {
-  item: (typeof galleryItems)[number];
+  item: GalleryStripItem;
   layoutIndex: number;
   globalIndex: number;
   onOpen: (index: number) => void;
@@ -21,7 +22,7 @@ function PolaroidButton({ item, layoutIndex, globalIndex, onOpen, snap }: Polaro
     <button
       type="button"
       onClick={() => onOpen(globalIndex)}
-      className={`polaroid w-36 shrink-0 transition-transform duration-500 hover:scale-105 hover:z-10 md:w-44 lg:w-52 ${tilts[layoutIndex]} ${offsets[layoutIndex]} ${snap ? 'snap-center' : ''}`}
+      className={`polaroid w-[10.8rem] shrink-0 transition-transform duration-500 hover:scale-105 hover:z-10 md:w-[13.2rem] lg:w-[15.6rem] ${tilts[layoutIndex]} ${offsets[layoutIndex]} ${snap ? 'snap-center' : ''}`}
     >
       <div className="aspect-[3/4] w-full overflow-hidden rounded-xl">
         <img
@@ -43,6 +44,11 @@ export function GalleryStrip() {
   const userInteracting = useRef(false);
   const resumeTimer = useRef<ReturnType<typeof setTimeout>>();
 
+  const openStripLightbox = useCallback(
+    (index: number) => openLightbox(index, 'strip'),
+    [openLightbox],
+  );
+
   const scrollToMobileIndex = useCallback((index: number, behavior: ScrollBehavior = 'smooth') => {
     const container = scrollRef.current;
     if (!container) return;
@@ -53,14 +59,16 @@ export function GalleryStrip() {
   }, []);
 
   useEffect(() => {
+    if (galleryStripItems.length === 0) return;
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
     const timer = setInterval(() => {
       if (userInteracting.current) return;
 
-      setStartIndex((prev) => (prev + 1) % galleryItems.length);
-      const next = (mobileIndexRef.current + 1) % galleryItems.length;
+      setStartIndex((prev) => (prev + 1) % galleryStripItems.length);
+      const next = (mobileIndexRef.current + 1) % galleryStripItems.length;
       mobileIndexRef.current = next;
       scrollToMobileIndex(next);
     }, AUTO_INTERVAL_MS);
@@ -100,13 +108,15 @@ export function GalleryStrip() {
   };
 
   const desktopItems = Array.from({ length: VISIBLE_COUNT }, (_, i) => {
-    const globalIndex = (startIndex + i) % galleryItems.length;
+    const globalIndex = (startIndex + i) % galleryStripItems.length;
     return {
-      item: galleryItems[globalIndex],
+      item: galleryStripItems[globalIndex],
       layoutIndex: i,
       globalIndex,
     };
   });
+
+  if (galleryStripItems.length === 0) return null;
 
   return (
     <section id="gallery-strip" className="section-light relative pb-0 pt-4">
@@ -115,29 +125,29 @@ export function GalleryStrip() {
           ref={scrollRef}
           onScroll={handleMobileScroll}
           onTouchStart={pauseAutoPlay}
-          className="gallery-strip-scroll flex items-end justify-start gap-3 overflow-x-auto pb-16 pt-4 md:hidden md:gap-5 md:pb-24 lg:gap-6"
+          className="gallery-strip-scroll flex items-end justify-start gap-3 overflow-x-auto pb-12 pt-4 md:hidden md:gap-5 lg:gap-6"
           aria-label="Gallery carousel"
         >
-          {galleryItems.map((item, index) => (
+          {galleryStripItems.map((item, index) => (
             <PolaroidButton
               key={item.id}
               item={item}
               layoutIndex={index % VISIBLE_COUNT}
               globalIndex={index}
-              onOpen={openLightbox}
+              onOpen={openStripLightbox}
               snap
             />
           ))}
         </div>
 
-        <div className="hidden items-end justify-center gap-3 overflow-x-hidden pb-16 pt-4 md:flex md:gap-5 md:pb-24 lg:gap-6">
+        <div className="hidden items-end justify-center gap-3 overflow-x-hidden pb-12 pt-4 md:flex md:gap-5 md:pb-20 lg:gap-6">
           {desktopItems.map(({ item, layoutIndex, globalIndex }) => (
             <PolaroidButton
               key={`${startIndex}-${item.id}`}
               item={item}
               layoutIndex={layoutIndex}
               globalIndex={globalIndex}
-              onOpen={openLightbox}
+              onOpen={openStripLightbox}
             />
           ))}
         </div>

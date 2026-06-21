@@ -1,30 +1,36 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import { galleryItems } from '../../data/content';
+import { galleryStripItems } from '../../config/images';
 import { useLightboxKeyboard } from '../../hooks';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
+
+const lightboxSources = {
+  gallery: galleryItems,
+  strip: galleryStripItems,
+} as const;
 
 export function LightboxModal() {
   const { lightbox, closeLightbox, setLightboxIndex } = useApp();
   const touchStartX = useRef(0);
-  const [filteredItems] = useState(galleryItems);
+  const items = lightboxSources[lightbox.source];
 
   const goPrev = useCallback(() => {
     setLightboxIndex(
-      (lightbox.index - 1 + filteredItems.length) % filteredItems.length,
+      (lightbox.index - 1 + items.length) % items.length,
     );
-  }, [lightbox.index, filteredItems.length, setLightboxIndex]);
+  }, [lightbox.index, items.length, setLightboxIndex]);
 
   const goNext = useCallback(() => {
-    setLightboxIndex((lightbox.index + 1) % filteredItems.length);
-  }, [lightbox.index, filteredItems.length, setLightboxIndex]);
+    setLightboxIndex((lightbox.index + 1) % items.length);
+  }, [lightbox.index, items.length, setLightboxIndex]);
 
   useLightboxKeyboard(lightbox.open, closeLightbox, goPrev, goNext);
 
-  if (!lightbox.open) return null;
+  if (!lightbox.open || items.length === 0) return null;
 
-  const item = filteredItems[lightbox.index];
+  const item = items[lightbox.index];
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -77,7 +83,7 @@ export function LightboxModal() {
           className="mx-auto overflow-hidden rounded-2xl border border-brand-pink/15 shadow-card"
         />
         <p className="mt-4 text-center text-sm text-ink-muted">
-          {lightbox.index + 1} / {filteredItems.length} — {item.alt}
+          {lightbox.index + 1} / {items.length} — {item.alt}
         </p>
       </div>
 

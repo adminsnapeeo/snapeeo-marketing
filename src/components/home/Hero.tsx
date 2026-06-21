@@ -2,7 +2,7 @@ import { ChevronDown } from 'lucide-react';
 import { IMAGE_DIR } from '../../config/images';
 import { Button } from '../ui/Button';
 
-const heroCoverImage = `${IMAGE_DIR}/jaipur-hawa-mahal-cover.webp`;
+const heroCoverImage = `${IMAGE_DIR}/jaipur-hawa-mahal-cover.jpg`;
 
 export function Hero() {
   const scrollToGallery = () => {

@@ -2,6 +2,7 @@
  * Static image paths — files in public/images/
  */
 export const IMAGE_DIR = '/images';
+export const GALLERY_STRIP_DIR = `${IMAGE_DIR}/gallery`;
 
 export const staticPhotos = [
   `${IMAGE_DIR}/hawa-mahal.jpg`,
@@ -13,6 +14,24 @@ export const staticPhotos = [
 export function getStaticPhoto(index: number): string {
   return staticPhotos[index % staticPhotos.length];
 }
+
+/**
+ * Gallery strip — drop files in public/images/gallery/ named:
+ *   snapeeo-gallery-1.webp, snapeeo-gallery-2.webp, …
+ * Set GALLERY_STRIP_COUNT to how many you've added.
+ * @see public/images/gallery/README.md
+ */
+export const GALLERY_STRIP_COUNT = 2;
+export const GALLERY_STRIP_EXT = '.png';
+
+export const galleryStripItems = Array.from({ length: GALLERY_STRIP_COUNT }, (_, index) => {
+  const n = index + 1;
+  return {
+    id: `strip-${n}`,
+    src: `${GALLERY_STRIP_DIR}/snapeeo-gallery-${n}${GALLERY_STRIP_EXT}`,
+    alt: `Snapeeo gallery ${n}`,
+  };
+});
 
 /** Hero carousel — one slide per image. */
 export const heroImages = staticPhotos.map(String);
