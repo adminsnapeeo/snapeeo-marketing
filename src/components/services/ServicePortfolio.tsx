@@ -5,6 +5,7 @@ import {
   getServicePortfolio,
   services,
 } from '../../data/content';
+import { getServiceCoverFallbacks } from '../../config/images';
 import type { ServicePortfolioItem } from '../../types';
 import { Button } from '../ui/Button';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
@@ -14,12 +15,16 @@ interface ServicePortfolioProps {
   serviceId: string;
 }
 
-const layoutClasses: Record<ServicePortfolioItem['layout'], string> = {
-  hero: 'col-span-2 row-span-2 md:col-span-2 md:row-span-2 min-h-[18rem] md:min-h-[24rem]',
-  wide: 'col-span-2 min-h-[12rem] md:min-h-[14rem]',
-  tall: 'row-span-2 min-h-[16rem] md:min-h-[20rem]',
-  normal: 'min-h-[12rem] md:min-h-[14rem]',
-};
+/** Explicit grid placement per gallery slot (matches bento layout on md+). */
+const portfolioTileClasses = [
+  'col-span-2 row-span-2 min-h-[18rem] md:col-span-2 md:row-span-2 md:col-start-1 md:row-start-1 md:min-h-[24rem]',
+  'col-span-2 min-h-[12rem] md:col-span-2 md:col-start-1 md:row-start-3 md:min-h-[14rem]',
+  'col-span-1 row-span-2 min-h-[16rem] md:col-span-1 md:row-span-2 md:col-start-3 md:row-start-1 md:min-h-[20rem]',
+  'min-h-[12rem] md:col-start-3 md:row-start-3 md:min-h-[14rem]',
+  'min-h-[12rem] md:col-start-1 md:row-start-4 md:min-h-[14rem]',
+  'col-span-2 min-h-[12rem] md:col-span-2 md:col-start-1 md:row-start-5 md:min-h-[14rem]',
+  'min-h-[12rem] md:col-start-3 md:row-start-4 md:row-span-2 md:min-h-[14rem]',
+] as const;
 
 function PortfolioTile({
   item,
@@ -34,10 +39,11 @@ function PortfolioTile({
     <button
       type="button"
       onClick={() => onOpen(index)}
-      className={`group relative overflow-hidden rounded-3xl surface-card surface-card-hover ${layoutClasses[item.layout]} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-4`}
+      className={`group relative overflow-hidden rounded-3xl surface-card surface-card-hover ${portfolioTileClasses[index]} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-4`}
     >
       <ResponsiveImage
         src={item.src}
+        fallbackSrcs={item.fallbackSrcs}
         alt={item.alt}
         variant="gallery"
         fill
@@ -88,6 +94,7 @@ export function ServicePortfolio({ serviceId }: ServicePortfolioProps) {
       <section className="relative min-h-[22rem] overflow-hidden md:min-h-[28rem]">
         <ResponsiveImage
           src={service.image}
+          fallbackSrcs={getServiceCoverFallbacks(serviceId)}
           alt={service.title}
           variant="hero"
           fill
@@ -147,7 +154,7 @@ export function ServicePortfolio({ serviceId }: ServicePortfolioProps) {
             subtitle="Tap any photo to view it full-screen. Every image represents the quality and style you can expect when booking through Snapeeo."
           />
 
-          <div className="grid auto-rows-fr grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:gap-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:grid-rows-[repeat(5,minmax(0,auto))] md:gap-5 lg:gap-6">
             {portfolio.map((item, index) => (
               <PortfolioTile
                 key={item.id}

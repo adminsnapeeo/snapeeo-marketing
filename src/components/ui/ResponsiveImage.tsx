@@ -1,5 +1,5 @@
 import { Camera } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export type ImageVariant =
   | 'hero'
@@ -25,6 +25,8 @@ interface ResponsiveImageProps {
   className?: string;
   imgClassName?: string;
   loading?: 'lazy' | 'eager';
+  /** Tried in order if the primary src fails to load (e.g. `.png` after `.jpg`). */
+  fallbackSrcs?: string[];
   /** Use when the image fills an already-sized parent (e.g. hero slide). */
   fill?: boolean;
 }
@@ -36,19 +38,42 @@ export function ResponsiveImage({
   className = '',
   imgClassName = '',
   loading = 'lazy',
+  fallbackSrcs = [],
   fill = false,
 }: ResponsiveImageProps) {
+  const sources = useMemo(
+    () => [src, ...fallbackSrcs].filter(Boolean),
+    [src, fallbackSrcs],
+  );
+  const [sourceIndex, setSourceIndex] = useState(0);
   const [failed, setFailed] = useState(false);
+  const currentSrc = sources[sourceIndex] ?? src;
+
+  useEffect(() => {
+    setSourceIndex(0);
+    setFailed(false);
+  }, [src, fallbackSrcs]);
+
+  const handleError = () => {
+    setSourceIndex((index) => {
+      if (index < sources.length - 1) {
+        return index + 1;
+      }
+      setFailed(true);
+      return index;
+    });
+  };
 
   if (fill) {
     return (
       <>
         {!failed ? (
           <img
-            src={src}
+            key={currentSrc}
+            src={currentSrc}
             alt={alt}
             loading={loading}
-            onError={() => setFailed(true)}
+            onError={handleError}
             className={`absolute inset-0 h-full w-full object-cover object-center ${imgClassName}`}
           />
         ) : (
@@ -67,10 +92,11 @@ export function ResponsiveImage({
     >
       {!failed ? (
         <img
-          src={src}
+          key={currentSrc}
+          src={currentSrc}
           alt={alt}
           loading={loading}
-          onError={() => setFailed(true)}
+          onError={handleError}
           className={`absolute inset-0 h-full w-full ${objectClass} object-center ${imgClassName}`}
         />
       ) : (

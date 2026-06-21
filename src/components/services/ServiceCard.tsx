@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { getServiceCardImageFallbacks, getServiceCardImageUrl } from '../../config/images';
 import type { Service } from '../../types';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
 import { Button } from '../ui/Button';
@@ -23,7 +24,8 @@ export function ServiceCard({
     >
       <div className="service-image-frame">
         <ResponsiveImage
-          src={service.image}
+          src={getServiceCardImageUrl(service.id)}
+          fallbackSrcs={getServiceCardImageFallbacks(service.id)}
           alt={service.title}
           variant="service"
           fill

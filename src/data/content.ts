@@ -1,10 +1,10 @@
 import {
   Baby,
   Briefcase,
-  Building2,
   Cake,
   Camera,
   Globe2,
+  GraduationCap,
   Package,
   Smartphone,
   Sparkles,
@@ -12,7 +12,13 @@ import {
   Users,
   Zap,
 } from 'lucide-react';
-import { galleryStripItems, getStaticPhoto } from '../config/images';
+import {
+  getServiceCoverUrl,
+  getServicePortfolioImageFallbacks,
+  getServicePortfolioImageUrl,
+  getStaticPhoto,
+  PORTFOLIO_GALLERY_BASENAMES,
+} from '../config/images';
 import type { GalleryItem, Service, ServicePortfolioItem, Stat } from '../types';
 
 export const services: Service[] = [
@@ -22,7 +28,7 @@ export const services: Service[] = [
     description: 'Romantic storytelling in stunning locations across Jaipur and beyond.',
     icon: Sparkles,
     gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
-    image: getStaticPhoto(0),
+    image: getServiceCoverUrl('pre-wedding'),
   },
   {
     id: 'birthday',
@@ -30,7 +36,7 @@ export const services: Service[] = [
     description: 'Capturing the joy of milestone celebrations with vibrant, candid shots.',
     icon: Cake,
     gradient: 'from-brand-pink/70 via-brand-pink-soft/30 to-transparent',
-    image: getStaticPhoto(1),
+    image: getServiceCoverUrl('birthday'),
   },
   {
     id: 'maternity',
@@ -38,7 +44,7 @@ export const services: Service[] = [
     description: 'Elegant, fine-art celebration of motherhood in beautiful settings.',
     icon: Star,
     gradient: 'from-brand-pink-light/75 via-brand-pink-soft/25 to-transparent',
-    image: getStaticPhoto(2),
+    image: getServiceCoverUrl('maternity'),
   },
   {
     id: 'baby',
@@ -46,7 +52,7 @@ export const services: Service[] = [
     description: 'Adorable, gentle newborn and toddler portraits you will treasure forever.',
     icon: Baby,
     gradient: 'from-brand-pink-light/65 via-brand-pink-soft/30 to-transparent',
-    image: getStaticPhoto(0),
+    image: getServiceCoverUrl('baby'),
   },
   {
     id: 'corporate',
@@ -54,7 +60,7 @@ export const services: Service[] = [
     description: 'Professional coverage for conferences, galas, and brand launches.',
     icon: Briefcase,
     gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
-    image: getStaticPhoto(1),
+    image: getServiceCoverUrl('corporate'),
   },
   {
     id: 'fashion',
@@ -62,7 +68,7 @@ export const services: Service[] = [
     description: 'High-fashion editorial styles for models, designers, and creators.',
     icon: Camera,
     gradient: 'from-brand-pink/65 via-brand-pink-soft/30 to-transparent',
-    image: getStaticPhoto(2),
+    image: getServiceCoverUrl('fashion'),
   },
   {
     id: 'product',
@@ -70,7 +76,7 @@ export const services: Service[] = [
     description: 'Crisp, commercial e-commerce and catalog product imagery.',
     icon: Package,
     gradient: 'from-brand-pink-light/75 via-brand-pink-soft/25 to-transparent',
-    image: getStaticPhoto(0),
+    image: getServiceCoverUrl('product'),
   },
   {
     id: 'influencer',
@@ -78,26 +84,17 @@ export const services: Service[] = [
     description: 'Trendy, social-first aesthetics tailored for creators and brands.',
     icon: Users,
     gradient: 'from-brand-pink-light/65 via-brand-pink-soft/30 to-transparent',
-    image: getStaticPhoto(1),
+    image: getServiceCoverUrl('influencer'),
   },
   {
-    id: 'real-estate',
-    title: 'Real Estate Photography',
-    description: 'Wide-angle, high-dynamic-range interior and exterior property shoots.',
-    icon: Building2,
+    id: 'college-universities',
+    title: 'College & Universities',
+    description: 'Campus events, graduation ceremonies, and university lifestyle photography.',
+    icon: GraduationCap,
     gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
-    image: getStaticPhoto(2),
+    image: getServiceCoverUrl('college-universities'),
   },
 ];
-
-const portfolioSources = [
-  ...staticPhotosFromConfig(),
-  ...galleryStripItems.map((item) => item.src),
-];
-
-function staticPhotosFromConfig(): string[] {
-  return [getStaticPhoto(0), getStaticPhoto(1), getStaticPhoto(2)];
-}
 
 const portfolioLayouts: ServicePortfolioItem['layout'][] = [
   'hero',
@@ -106,28 +103,33 @@ const portfolioLayouts: ServicePortfolioItem['layout'][] = [
   'normal',
   'normal',
   'wide',
+  'accent',
 ];
 
-function buildServicePortfolio(
-  serviceId: string,
-  title: string,
-  offset: number,
-): ServicePortfolioItem[] {
-  return portfolioLayouts.map((layout, index) => {
-    const src = portfolioSources[(offset + index) % portfolioSources.length];
-    return {
-      id: `${serviceId}-${index + 1}`,
-      src,
-      alt: `${title} — portfolio ${index + 1}`,
-      layout,
-    };
-  });
+const portfolioGalleryLabels: Record<(typeof PORTFOLIO_GALLERY_BASENAMES)[number], string> = {
+  '01-featured': 'Featured',
+  '02-wide': 'Wide',
+  '03-tall': 'Tall',
+  '04-normal': 'Gallery',
+  '05-normal': 'Gallery',
+  '06-wide': 'Wide',
+  '07-accent': 'Accent',
+};
+
+function buildServicePortfolio(serviceId: string, title: string): ServicePortfolioItem[] {
+  return PORTFOLIO_GALLERY_BASENAMES.map((basename, index) => ({
+    id: `${serviceId}-${index + 1}`,
+    src: getServicePortfolioImageUrl(serviceId, basename),
+    fallbackSrcs: getServicePortfolioImageFallbacks(serviceId, basename),
+    alt: `${title} — ${portfolioGalleryLabels[basename]}`,
+    layout: portfolioLayouts[index],
+  }));
 }
 
 export const servicePortfolios: Record<string, ServicePortfolioItem[]> = Object.fromEntries(
-  services.map((service, index) => [
+  services.map((service) => [
     service.id,
-    buildServicePortfolio(service.id, service.title, index),
+    buildServicePortfolio(service.id, service.title),
   ]),
 );
 

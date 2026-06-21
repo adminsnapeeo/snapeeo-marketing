@@ -41,3 +41,86 @@ export const heroImages = staticPhotos.map(String);
 
 /** About section featured image */
 export const aboutImage = staticPhotos[0];
+
+/**
+ * Service portfolios — one folder per service under public/images/portfolios/
+ * @see public/images/portfolios/README.md
+ */
+export const PORTFOLIO_DIR = `${IMAGE_DIR}/portfolios`;
+
+export const PORTFOLIO_SERVICE_IDS = [
+  'pre-wedding',
+  'birthday',
+  'maternity',
+  'baby',
+  'corporate',
+  'fashion',
+  'product',
+  'influencer',
+  'college-universities',
+] as const;
+
+export type PortfolioServiceId = (typeof PORTFOLIO_SERVICE_IDS)[number];
+
+export const PORTFOLIO_COVER_BASENAME = 'cover';
+export const PORTFOLIO_ACCENT_BASENAME = '07-accent';
+
+/** Base names only — use `.jpg` or `.png` in each service folder. */
+export const PORTFOLIO_GALLERY_BASENAMES = [
+  '01-featured',
+  '02-wide',
+  '03-tall',
+  '04-normal',
+  '05-normal',
+  '06-wide',
+  '07-accent',
+] as const;
+
+export const PORTFOLIO_IMAGE_EXTS = ['.jpg', '.png'] as const;
+
+export function getPortfolioImageUrls(
+  serviceId: string,
+  basename: string,
+): readonly string[] {
+  return PORTFOLIO_IMAGE_EXTS.map(
+    (ext) => `${PORTFOLIO_DIR}/${serviceId}/${basename}${ext}`,
+  );
+}
+
+export function getServiceCoverUrl(serviceId: string): string {
+  return getPortfolioImageUrls(serviceId, PORTFOLIO_COVER_BASENAME)[0];
+}
+
+export function getServiceCoverFallbacks(serviceId: string): string[] {
+  return getPortfolioImageUrls(serviceId, PORTFOLIO_COVER_BASENAME).slice(1);
+}
+
+/** Accent shot — used on the All Services cards. */
+export function getServiceAccentUrl(serviceId: string): string {
+  return getPortfolioImageUrls(serviceId, PORTFOLIO_ACCENT_BASENAME)[0];
+}
+
+/** Accent first, then cover, for service listing cards. */
+export function getServiceCardImageUrl(serviceId: string): string {
+  return getServiceAccentUrl(serviceId);
+}
+
+export function getServiceCardImageFallbacks(serviceId: string): string[] {
+  const accentUrls = getPortfolioImageUrls(serviceId, PORTFOLIO_ACCENT_BASENAME);
+  const coverUrls = getPortfolioImageUrls(serviceId, PORTFOLIO_COVER_BASENAME);
+  return [...accentUrls.slice(1), ...coverUrls];
+}
+
+export function getServicePortfolioImageUrl(
+  serviceId: string,
+  basename: (typeof PORTFOLIO_GALLERY_BASENAMES)[number],
+): string {
+  return getPortfolioImageUrls(serviceId, basename)[0];
+}
+
+export function getServicePortfolioImageFallbacks(
+  serviceId: string,
+  basename: (typeof PORTFOLIO_GALLERY_BASENAMES)[number],
+): string[] {
+  return getPortfolioImageUrls(serviceId, basename).slice(1);
+}

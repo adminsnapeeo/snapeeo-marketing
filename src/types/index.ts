@@ -33,11 +33,12 @@ export interface GalleryStripItem {
 
 export type LightboxSource = 'gallery' | 'strip' | 'portfolio';
 
-export type PortfolioLayout = 'hero' | 'wide' | 'tall' | 'normal';
+export type PortfolioLayout = 'hero' | 'wide' | 'tall' | 'normal' | 'accent';
 
 export interface ServicePortfolioItem {
   id: string;
   src: string;
+  fallbackSrcs?: string[];
   alt: string;
   layout: PortfolioLayout;
 }

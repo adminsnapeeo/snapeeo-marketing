@@ -4,6 +4,7 @@ import { useApp } from '../../context/AppContext';
 import { galleryItems, getServicePortfolio } from '../../data/content';
 import { galleryStripItems } from '../../config/images';
 import { useLightboxKeyboard } from '../../hooks';
+import type { ServicePortfolioItem } from '../../types';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
 
 const lightboxSources = {
@@ -37,6 +38,8 @@ export function LightboxModal() {
   if (!lightbox.open || items.length === 0) return null;
 
   const item = items[lightbox.index];
+  const portfolioItem =
+    lightbox.source === 'portfolio' ? (item as ServicePortfolioItem) : null;
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -84,6 +87,7 @@ export function LightboxModal() {
       >
         <ResponsiveImage
           src={item.src}
+          fallbackSrcs={portfolioItem?.fallbackSrcs}
           alt={item.alt}
           variant="lightbox"
           className="mx-auto overflow-hidden rounded-2xl border border-brand-pink/15 shadow-card"
