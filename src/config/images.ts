@@ -21,14 +21,17 @@ export function getStaticPhoto(index: number): string {
  * Set GALLERY_STRIP_COUNT to how many you've added.
  * @see public/images/gallery/README.md
  */
-export const GALLERY_STRIP_COUNT = 2;
+export const GALLERY_STRIP_COUNT = 4;
 export const GALLERY_STRIP_EXT = '.png';
+/** Per-image extension when files differ (gallery-1, gallery-2, …). */
+export const GALLERY_STRIP_EXTS = ['.png', '.png', '.jpeg', '.JPG'] as const;
 
 export const galleryStripItems = Array.from({ length: GALLERY_STRIP_COUNT }, (_, index) => {
   const n = index + 1;
+  const ext = GALLERY_STRIP_EXTS[index] ?? GALLERY_STRIP_EXT;
   return {
     id: `strip-${n}`,
-    src: `${GALLERY_STRIP_DIR}/snapeeo-gallery-${n}${GALLERY_STRIP_EXT}`,
+    src: `${GALLERY_STRIP_DIR}/snapeeo-gallery-${n}${ext}`,
     alt: `Snapeeo gallery ${n}`,
   };
 });
