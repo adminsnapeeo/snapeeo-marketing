@@ -1,15 +1,15 @@
-import { Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Instagram /* , Linkedin, Youtube */ } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { SVGProps } from 'react';
-import { PinterestIcon } from '../ui/PinterestIcon';
+// import { PinterestIcon } from '../ui/PinterestIcon';
 
 type SocialIcon = LucideIcon | ((props: SVGProps<SVGSVGElement>) => JSX.Element);
 
 const socialLinks: { icon: SocialIcon; label: string; href: string }[] = [
-  { icon: Instagram, label: 'Instagram', href: 'https://instagram.com' },
-  { icon: PinterestIcon, label: 'Pinterest', href: 'https://pinterest.com' },
-  { icon: Youtube, label: 'YouTube', href: 'https://youtube.com' },
-  { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/snapeeo?igsh=MTNwdjBrMzN2NXBxag%3D%3D' },
+  // { icon: PinterestIcon, label: 'Pinterest', href: 'https://pinterest.com' },
+  // { icon: Youtube, label: 'YouTube', href: 'https://youtube.com' },
+  // { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
 ];
 
 interface SocialBarProps {

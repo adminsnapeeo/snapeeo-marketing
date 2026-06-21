@@ -50,8 +50,8 @@ export function ContactSection() {
             <div className="space-y-5">
               {[
                 { icon: MapPin, title: 'Visit Us', detail: 'Hawa Mahal, Jaipur, Rajasthan' },
-                { icon: Mail, title: 'Email', detail: 'admin.snapeeo@gmail.com' },
-                { icon: Phone, title: 'Phone', detail: '+91 9879879879' },
+                { icon: Mail, title: 'Email', detail: 'connect.snapeeo@gmail.com' },
+                { icon: Phone, title: 'Phone', detail: '+91 8581956688' },
                 { icon: Clock, title: 'Hours', detail: 'Mon – Fri: 9am – 6pm PST\nSat: 10am – 4pm PST' },
               ].map(({ icon: Icon, title, detail }) => (
                 <GlassCard key={title} className="group flex gap-4">
