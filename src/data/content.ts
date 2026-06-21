@@ -12,8 +12,8 @@ import {
   Users,
   Zap,
 } from 'lucide-react';
-import { getStaticPhoto } from '../config/images';
-import type { GalleryItem, Service, Stat } from '../types';
+import { galleryStripItems, getStaticPhoto } from '../config/images';
+import type { GalleryItem, Service, ServicePortfolioItem, Stat } from '../types';
 
 export const services: Service[] = [
   {
@@ -89,6 +89,55 @@ export const services: Service[] = [
     image: getStaticPhoto(2),
   },
 ];
+
+const portfolioSources = [
+  ...staticPhotosFromConfig(),
+  ...galleryStripItems.map((item) => item.src),
+];
+
+function staticPhotosFromConfig(): string[] {
+  return [getStaticPhoto(0), getStaticPhoto(1), getStaticPhoto(2)];
+}
+
+const portfolioLayouts: ServicePortfolioItem['layout'][] = [
+  'hero',
+  'wide',
+  'tall',
+  'normal',
+  'normal',
+  'wide',
+];
+
+function buildServicePortfolio(
+  serviceId: string,
+  title: string,
+  offset: number,
+): ServicePortfolioItem[] {
+  return portfolioLayouts.map((layout, index) => {
+    const src = portfolioSources[(offset + index) % portfolioSources.length];
+    return {
+      id: `${serviceId}-${index + 1}`,
+      src,
+      alt: `${title} — portfolio ${index + 1}`,
+      layout,
+    };
+  });
+}
+
+export const servicePortfolios: Record<string, ServicePortfolioItem[]> = Object.fromEntries(
+  services.map((service, index) => [
+    service.id,
+    buildServicePortfolio(service.id, service.title, index),
+  ]),
+);
+
+export function getServicePortfolio(serviceId: string): ServicePortfolioItem[] {
+  return servicePortfolios[serviceId] ?? [];
+}
+
+export function getServiceById(serviceId: string): Service | undefined {
+  return services.find((service) => service.id === serviceId);
+}
 
 export const galleryItems: GalleryItem[] = [
   {

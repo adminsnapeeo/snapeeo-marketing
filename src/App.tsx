@@ -14,6 +14,7 @@ import { Testimonials } from './components/home/Testimonials';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { ServicesGrid } from './components/services/ServicesGrid';
+import { ServicePortfolio } from './components/services/ServicePortfolio';
 import { AppContext } from './context/AppContext';
 import { useAppNavigation } from './hooks';
 import type { AppContextValue, LightboxSource, LightboxState } from './types';
@@ -24,7 +25,6 @@ function App() {
     setActiveView,
     focusedServiceId,
     goToService,
-    clearFocusedService,
     scrollToSection,
   } = useAppNavigation();
   const [lightbox, setLightbox] = useState<LightboxState>({ open: false, index: 0, source: 'gallery' });
@@ -88,7 +88,11 @@ function App() {
             </>
           )}
           {activeView === 'services' && (
-            <ServicesGrid onFocusComplete={clearFocusedService} />
+            focusedServiceId ? (
+              <ServicePortfolio serviceId={focusedServiceId} />
+            ) : (
+              <ServicesGrid />
+            )
           )}
           {activeView === 'about' && <AboutSection />}
           {activeView === 'contact' && <ContactSection />}

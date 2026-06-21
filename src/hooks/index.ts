@@ -88,7 +88,7 @@ export function useAppNavigation() {
 
       if (route.view === 'home' && route.sectionId) {
         window.setTimeout(() => scrollToSection(route.sectionId!), 300);
-      } else if (!route.serviceId) {
+      } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     },

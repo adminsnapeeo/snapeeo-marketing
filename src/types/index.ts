@@ -31,7 +31,16 @@ export interface GalleryStripItem {
   alt: string;
 }
 
-export type LightboxSource = 'gallery' | 'strip';
+export type LightboxSource = 'gallery' | 'strip' | 'portfolio';
+
+export type PortfolioLayout = 'hero' | 'wide' | 'tall' | 'normal';
+
+export interface ServicePortfolioItem {
+  id: string;
+  src: string;
+  alt: string;
+  layout: PortfolioLayout;
+}
 
 export interface LightboxState {
   open: boolean;

@@ -6,14 +6,12 @@ import { Button } from '../ui/Button';
 interface ServiceCardProps {
   service: Service;
   index: number;
-  isFocused?: boolean;
   onViewPortfolio: (serviceId: string) => void;
 }
 
 export function ServiceCard({
   service,
   index,
-  isFocused = false,
   onViewPortfolio,
 }: ServiceCardProps) {
   const Icon = service.icon;
@@ -21,9 +19,7 @@ export function ServiceCard({
   return (
     <article
       id={`service-${service.id}`}
-      className={`group surface-card surface-card-hover flex flex-col overflow-hidden transition-all duration-300 ${
-        isFocused ? 'ring-2 ring-[#e94e89]/40 scale-[1.02]' : ''
-      }`}
+      className="group surface-card surface-card-hover flex flex-col overflow-hidden transition-all duration-300"
     >
       <div className="service-image-frame">
         <ResponsiveImage

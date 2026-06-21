@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { useCallback, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
-import { galleryItems } from '../../data/content';
+import { galleryItems, getServicePortfolio } from '../../data/content';
 import { galleryStripItems } from '../../config/images';
 import { useLightboxKeyboard } from '../../hooks';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
@@ -12,9 +12,15 @@ const lightboxSources = {
 } as const;
 
 export function LightboxModal() {
-  const { lightbox, closeLightbox, setLightboxIndex } = useApp();
+  const { lightbox, closeLightbox, setLightboxIndex, focusedServiceId } = useApp();
   const touchStartX = useRef(0);
-  const items = lightboxSources[lightbox.source];
+
+  const items = useMemo(() => {
+    if (lightbox.source === 'portfolio') {
+      return focusedServiceId ? getServicePortfolio(focusedServiceId) : [];
+    }
+    return lightboxSources[lightbox.source];
+  }, [lightbox.source, focusedServiceId]);
 
   const goPrev = useCallback(() => {
     setLightboxIndex(

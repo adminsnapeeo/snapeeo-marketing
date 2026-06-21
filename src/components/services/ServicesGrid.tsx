@@ -1,20 +1,16 @@
 import { ArrowLeft } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { services } from '../../data/content';
-import { useFocusService } from '../../hooks';
 import { PageHero } from '../ui/PageHero';
 import { Button } from '../ui/Button';
 import { ServiceCard } from './ServiceCard';
 
 interface ServicesGridProps {
-  onFocusComplete: () => void;
   showBackLink?: boolean;
 }
 
-export function ServicesGrid({ onFocusComplete, showBackLink = true }: ServicesGridProps) {
-  const { focusedServiceId, goToService, setActiveView } = useApp();
-
-  useFocusService(focusedServiceId, onFocusComplete);
+export function ServicesGrid({ showBackLink = true }: ServicesGridProps) {
+  const { goToService, setActiveView } = useApp();
 
   return (
     <>
@@ -32,9 +28,7 @@ export function ServicesGrid({ onFocusComplete, showBackLink = true }: ServicesG
                 key={service.id}
                 type="button"
                 onClick={() => goToService(service.id)}
-                className={`chip px-4 py-1.5 text-xs md:text-sm ${
-                  focusedServiceId === service.id ? 'chip-active' : ''
-                }`}
+                className="chip px-4 py-1.5 text-xs md:text-sm"
               >
                 {String(i + 1).padStart(2, '0')}. {service.title.split(' ')[0]}
               </button>
@@ -47,7 +41,6 @@ export function ServicesGrid({ onFocusComplete, showBackLink = true }: ServicesG
                 key={service.id}
                 service={service}
                 index={index}
-                isFocused={focusedServiceId === service.id}
                 onViewPortfolio={goToService}
               />
             ))}
