@@ -147,6 +147,10 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
+  .service-image-frame {
+    @apply relative w-full shrink-0 overflow-hidden aspect-[5/3] min-h-[16rem] sm:min-h-[17rem] md:min-h-[18rem];
+  }
+
   .card-interactive {
     @apply cursor-pointer;
   }

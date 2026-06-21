@@ -18,7 +18,7 @@ export function ServicesPreview() {
           subtitle="Beyond instant booking — explore specialty shoots for every occasion."
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
           {preview.map((service) => {
             const Icon = service.icon;
             return (
@@ -26,14 +26,15 @@ export function ServicesPreview() {
                 key={service.id}
                 type="button"
                 onClick={() => goToService(service.id)}
-                className="card-on-pink group overflow-hidden text-left transition-transform duration-300 hover:scale-[1.02]"
+                className="card-on-pink group flex w-full flex-col overflow-hidden text-left transition-transform duration-300 hover:scale-[1.02]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="service-image-frame">
                   <ResponsiveImage
                     src={service.image}
                     alt={service.title}
-                    variant="gallery"
-                    imgClassName="transition-transform duration-500 group-hover:scale-105"
+                    variant="service"
+                    fill
+                    imgClassName="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-brand-pink">
                     <Icon className="h-4 w-4" />

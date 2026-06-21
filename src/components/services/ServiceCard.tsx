@@ -25,12 +25,13 @@ export function ServiceCard({
         isFocused ? 'ring-2 ring-[#e94e89]/40 scale-[1.02]' : ''
       }`}
     >
-      <div className="relative overflow-hidden">
+      <div className="service-image-frame">
         <ResponsiveImage
           src={service.image}
           alt={service.title}
           variant="service"
-          imgClassName="transition-transform duration-500 group-hover:scale-105"
+          fill
+          imgClassName="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
         <div
           className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-40 transition-opacity duration-300 group-hover:opacity-55`}
