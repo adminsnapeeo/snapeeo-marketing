@@ -17,7 +17,7 @@ export function DownloadBanner() {
             <span className="section-pill-on-pink mb-3 inline-flex uppercase tracking-wide">
               Pre-launch · Your city first
             </span>
-            <h2 className="text-3xl font-bold text-white md:text-4xl">
+            <h2 className="text-accent-gold text-3xl font-bold md:text-4xl">
               The app is coming soon
             </h2>
             <p className="mt-3 max-w-xl text-base text-white/90 md:text-lg">
@@ -33,8 +33,7 @@ export function DownloadBanner() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-brand-teal"
+                variant="outline-on-dark"
                 onClick={() => setActiveView('contact')}
               >
                 <Camera className="h-5 w-5" />

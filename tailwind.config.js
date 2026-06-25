@@ -28,7 +28,11 @@ export default {
           link: '#38BDF8',
         },
         pearl: '#FFFFFF',
-        'amber-gold': '#E94E89',
+        gold: {
+          DEFAULT: '#D4AF37',
+          light: '#F5D061',
+          dark: '#B8960C',
+        },
         'slate-muted': '#9CA3AF',
       },
       fontFamily: {

@@ -160,6 +160,21 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
+  .btn-outline-on-dark {
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+  }
+
+  .btn-outline-on-dark:hover {
+    background-color: #ffffff;
+    color: #3d9485;
+  }
+
+  .btn-outline-on-dark:hover svg {
+    color: #3d9485;
+  }
+
   .service-image-frame {
     @apply relative w-full shrink-0 overflow-hidden aspect-[5/3] min-h-[16rem] sm:min-h-[17rem] md:min-h-[18rem];
   }
@@ -461,6 +476,71 @@
     border: 1px solid rgba(82, 169, 153, 0.14);
   }
 
+  .hero-pill-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 9999px;
+    padding: 0.45rem 1.15rem;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #4a3410;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(184, 134, 11, 0.55);
+    background: linear-gradient(
+      135deg,
+      #b8860b 0%,
+      #d4af37 18%,
+      #fceabb 38%,
+      #f8d347 52%,
+      #d4af37 68%,
+      #fceabb 85%,
+      #c9a227 100%
+    );
+    background-size: 220% 220%;
+    animation: goldPillShimmer 3.5s ease-in-out infinite;
+    box-shadow:
+      0 4px 18px -4px rgba(160, 110, 20, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45),
+      inset 0 -1px 0 rgba(120, 80, 10, 0.2);
+  }
+
+  .hero-pill-gold::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 70%
+    );
+    transform: translateX(-130%);
+    animation: goldPillShine 4.5s ease-in-out infinite;
+  }
+
+  .hero-pill-gold > span {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-pill-gold {
+      animation: none;
+    }
+
+    .hero-pill-gold::after {
+      animation: none;
+      opacity: 0;
+    }
+  }
+
   .section-pill-pink {
     display: inline-flex;
     align-items: center;
@@ -515,6 +595,25 @@
 
   .text-accent-pink {
     color: #e94e89;
+  }
+
+  .text-accent-gold {
+    background: linear-gradient(
+      110deg,
+      #b8860b 0%,
+      #d4af37 15%,
+      #fceabb 30%,
+      #fff8dc 42%,
+      #f8d347 55%,
+      #d4af37 68%,
+      #fceabb 82%,
+      #c9a227 100%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: goldShimmer 4s ease-in-out infinite;
   }
 
   .heading-rule {
@@ -860,5 +959,36 @@
   }
   50% {
     box-shadow: 0 0 0 5px rgba(233, 78, 137, 0);
+  }
+}
+
+@keyframes goldShimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes goldPillShimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes goldPillShine {
+  0%,
+  65%,
+  100% {
+    transform: translateX(-130%);
+  }
+  82% {
+    transform: translateX(130%);
   }
 }

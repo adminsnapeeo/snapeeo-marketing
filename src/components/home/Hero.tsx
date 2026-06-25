@@ -20,7 +20,7 @@ export function Hero() {
       <div className="hero-content mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="animate-slide-up text-center lg:text-left">
-            <span className="section-pill-light mb-5 inline-block max-w-full text-pretty leading-snug">
+            <span className="hero-pill-gold mb-5 inline-block max-w-full text-pretty leading-snug">
               <TypewriterText text="Your city's photography marketplace · Pre-launch" />
             </span>
             <h1 className="color-heading text-balance text-4xl font-bold leading-[1.15] md:text-5xl lg:text-[3.25rem]">
