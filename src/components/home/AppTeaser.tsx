@@ -19,8 +19,8 @@ export function AppTeaser() {
           subtitle="One app for customers and photographers — find talent, book instantly, and deliver photos seamlessly."
         />
 
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="flex justify-center">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="flex justify-center overflow-visible px-1 py-2 sm:px-0">
             <PhoneMockup />
           </div>
 
@@ -28,7 +28,7 @@ export function AppTeaser() {
             {appFeatures.map((feature) => {
               const Icon = iconMap[feature.icon];
               return (
-                <div key={feature.title} className="card-on-pink flex gap-4 p-5">
+                <div key={feature.title} className="card-on-teal flex gap-4 p-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-white">
                     <Icon className="h-5 w-5" />
                   </div>

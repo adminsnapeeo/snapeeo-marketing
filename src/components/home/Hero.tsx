@@ -24,7 +24,8 @@ export function Hero() {
               <TypewriterText text="Your city's photography marketplace · Pre-launch" />
             </span>
             <h1 className="color-heading text-balance text-4xl font-bold leading-[1.15] md:text-5xl lg:text-[3.25rem]">
-              Find. Book.{' '}
+              Find.{' '}
+              <span className="text-accent-pink">Book.</span>{' '}
               <span className="text-highlight">Shoot.</span>{' '}
               Receive.
             </h1>

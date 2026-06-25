@@ -14,11 +14,11 @@ export function WaveDivider({ fill = '#FFFFFF', className = '', flip = false }: 
       <svg
         viewBox="0 0 1440 100"
         preserveAspectRatio="none"
-        className="block h-12 w-full md:h-16 lg:h-20"
+        className="block h-14 w-full md:h-20 lg:h-24"
       >
         <path
           fill={fill}
-          d="M0,55 C240,95 480,15 720,55 C960,95 1200,15 1440,55 L1440,100 L0,100 Z"
+          d="M0,52 C120,8 240,92 360,52 C480,8 600,92 720,52 C840,8 960,92 1080,52 C1200,8 1320,92 1440,52 L1440,100 L0,100 Z"
         />
       </svg>
     </div>

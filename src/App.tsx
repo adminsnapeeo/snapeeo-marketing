@@ -13,6 +13,7 @@ import { ServicesPreview } from './components/home/ServicesPreview';
 import { PhotographerCTA } from './components/home/PhotographerCTA';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
+import { WaveDivider } from './components/ui/WaveDivider';
 import { ServicesGrid } from './components/services/ServicesGrid';
 import { ServicePortfolio } from './components/services/ServicePortfolio';
 import { AppContext } from './context/AppContext';
@@ -78,11 +79,41 @@ function App() {
               <GalleryStrip />
               <div className="section-pink">
                 <HowItWorks />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#52A999" />
+                </div>
+              </div>
+              <div className="section-teal">
                 <AppTeaser />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#E94E89" />
+                </div>
+              </div>
+              <div className="section-pink">
                 <PhotographerCTA />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#52A999" />
+                </div>
+              </div>
+              <div className="section-teal">
                 <ServicesPreview />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#E94E89" />
+                </div>
+              </div>
+              <div className="section-pink">
                 <FAQ />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#52A999" />
+                </div>
+              </div>
+              <div className="section-teal">
                 <DownloadBanner />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#E94E89" />
+                </div>
+              </div>
+              <div className="section-pink">
                 <Footer onNavigate={setActiveView} embedded />
               </div>
             </>

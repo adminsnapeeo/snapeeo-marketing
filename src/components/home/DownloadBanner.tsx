@@ -9,12 +9,12 @@ export function DownloadBanner() {
   return (
     <section className="pt-4 pb-12 md:pt-6 md:pb-16">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
-        <div className="flex flex-col items-center gap-8 rounded-3xl bg-white/15 p-8 text-center backdrop-blur-sm md:flex-row md:p-12 md:text-left">
+        <div className="card-on-teal flex flex-col items-center gap-8 p-8 text-center md:flex-row md:p-12 md:text-left">
           <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white/20">
             <Smartphone className="h-10 w-10 text-white" />
           </div>
           <div className="flex-1">
-            <span className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/90">
+            <span className="section-pill-on-pink mb-3 inline-flex uppercase tracking-wide">
               Pre-launch · Your city first
             </span>
             <h2 className="text-3xl font-bold text-white md:text-4xl">
@@ -34,7 +34,7 @@ export function DownloadBanner() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-brand-pink"
+                className="border-white text-white hover:bg-white hover:text-brand-teal"
                 onClick={() => setActiveView('contact')}
               >
                 <Camera className="h-5 w-5" />

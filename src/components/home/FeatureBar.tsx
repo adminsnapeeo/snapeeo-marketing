@@ -6,7 +6,7 @@ export function FeatureBar() {
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <div className="feature-strip-inner">
           <div className="mb-8 text-center md:mb-10">
-            <span className="section-pill-light mb-3 inline-flex">The platform</span>
+            <span className="section-pill-pink mb-3 inline-flex">The platform</span>
             <p className="color-heading mx-auto max-w-lg text-lg font-semibold md:text-xl">
               A marketplace built for easy booking — for customers and photographers
             </p>

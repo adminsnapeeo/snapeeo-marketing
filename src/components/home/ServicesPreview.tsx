@@ -27,7 +27,7 @@ export function ServicesPreview() {
                 key={service.id}
                 type="button"
                 onClick={() => goToService(service.id)}
-                className="card-on-pink group flex w-full flex-col overflow-hidden text-left transition-transform duration-300 hover:scale-[1.02]"
+                className="card-on-teal group flex w-full flex-col overflow-hidden text-left transition-transform duration-300 hover:scale-[1.02]"
               >
                 <div className="service-image-frame">
                   <ResponsiveImage
@@ -38,7 +38,7 @@ export function ServicesPreview() {
                     fill
                     imgClassName="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-brand-pink">
+                  <div className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-brand-teal">
                     <Icon className="h-4 w-4" />
                   </div>
                 </div>
