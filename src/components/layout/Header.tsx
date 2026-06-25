@@ -34,7 +34,7 @@ export function Header() {
               <Aperture className="h-4 w-4" />
             </div>
             <span className="color-heading text-xl font-bold">
-              Snape<span className="text-highlight">eo</span>
+              Snap<span className="text-highlight">eeo</span>
             </span>
           </button>
 

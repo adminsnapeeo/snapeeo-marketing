@@ -30,7 +30,7 @@ export function PhoneMockup() {
           <div className="px-4 pb-3">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-base font-bold text-highlight">Snape<span className="text-brand-pink-dark">eo</span></p>
+                <p className="text-base font-bold text-highlight">Snap<span className="text-brand-pink-dark">eeo</span></p>
                 <div className="mt-0.5 flex items-center gap-1 text-[10px] text-ink-muted">
                   <MapPin className="h-3 w-3 text-brand-pink" />
                   Jaipur, Rajasthan

@@ -47,7 +47,7 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
                 <Aperture className="h-4 w-4" />
               </div>
               <span className="text-xl font-bold text-white">
-                Snape<span className="text-white/85">eo</span>
+                Snap<span className="text-white/85">eeo</span>
               </span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-white/80">
