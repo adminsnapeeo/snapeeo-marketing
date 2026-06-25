@@ -8,7 +8,7 @@ export function HowItWorks() {
         <SectionHeading
           light
           title="How it works"
-          subtitle="From search to stunning photos — four simple steps. Book verified photographers in under 60 seconds and receive edited galleries straight to your phone."
+          subtitle="Find. Book. Shoot. Receive. — four steps from search to delivery on the Snapeeo marketplace."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

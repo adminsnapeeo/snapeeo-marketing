@@ -15,8 +15,8 @@ export function AppTeaser() {
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light
-          title="Built for Instant Booking"
-          subtitle="Everything you need to find, book, and receive professional photography — fast."
+          title="Built for the marketplace"
+          subtitle="One app for customers and photographers — find talent, book instantly, and deliver photos seamlessly."
         />
 
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">

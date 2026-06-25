@@ -15,8 +15,8 @@ export function ServicesPreview() {
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <SectionHeading
           light
-          title="Photography Services"
-          subtitle="Beyond instant booking — explore specialty shoots for every occasion."
+          title="Book by shoot type"
+          subtitle="Browse the kinds of sessions available on Snapeeo — each booked through independent photographers on the platform."
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">

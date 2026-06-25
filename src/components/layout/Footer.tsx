@@ -6,12 +6,13 @@ import { Button } from '../ui/Button';
 import { SocialBar } from './SocialBar';
 
 interface FooterProps {
-  onNavigate: (view: ViewId) => void;
+  onNavigate: (view: ViewId, sectionId?: string) => void;
   embedded?: boolean;
 }
 
-const quickLinks: { label: string; view: ViewId }[] = [
+const quickLinks: { label: string; view: ViewId; sectionId?: string }[] = [
   { label: 'Home', view: 'home' },
+  { label: 'For Photographers', view: 'home', sectionId: 'for-photographers' },
   { label: 'Services', view: 'services' },
   { label: 'About', view: 'about' },
   { label: 'Contact', view: 'contact' },
@@ -51,8 +52,10 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
               </span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-white/80">
-              Book verified photographers instantly. Real-time availability, seamless chat, and stunning photo delivery.
+              The photography marketplace for Jaipur — connecting customers with local photographers.
+              Find. Book. Shoot. Receive.
             </p>
+            <p className="mb-3 text-sm font-semibold text-white">Find us</p>
             <SocialBar light />
           </div>
 
@@ -63,7 +66,7 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
                 <li key={link.label}>
                   <button
                     type="button"
-                    onClick={() => onNavigate(link.view)}
+                    onClick={() => onNavigate(link.view, link.sectionId)}
                     className="text-sm font-medium text-white/80 transition-colors hover:text-white"
                   >
                     {link.label}
@@ -92,7 +95,7 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
           <div>
             <h3 className="mb-4 text-lg font-bold text-white">Stay Updated</h3>
             <p className="mb-4 text-sm text-white/80">
-              Get booking tips and exclusive photographer offers.
+              Launch updates for Jaipur — for customers and photographers.
             </p>
             <form onSubmit={handleNewsletter} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <input

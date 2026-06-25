@@ -15,9 +15,9 @@ export function ServicesGrid({ showBackLink = true }: ServicesGridProps) {
   return (
     <>
       <PageHero
-        badge="What we offer"
-        title="Our Services"
-        subtitle="Ten professional photography specialties — each delivered by verified Snapeeo photographers with portfolio-grade results."
+        badge="On the platform"
+        title="Shoot types you can book"
+        subtitle="Every category below connects you with independent photographers in Jaipur — browse portfolios and book through Snapeeo."
       />
 
       <div className="section-page view-transition pb-16 md:pb-24">

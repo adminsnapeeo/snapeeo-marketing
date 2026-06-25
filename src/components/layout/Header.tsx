@@ -58,8 +58,13 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <Button size="sm">Book Now</Button>
+          <div className="hidden items-center gap-3 md:flex">
+            <Button size="sm" variant="outline" onClick={() => handleNavigate('contact')}>
+              Join as photographer
+            </Button>
+            <Button size="sm" onClick={() => handleNavigate('home', 'how-it-works')}>
+              Find a photographer
+            </Button>
           </div>
 
           <button

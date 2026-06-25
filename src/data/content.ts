@@ -3,8 +3,8 @@ import {
   Briefcase,
   Cake,
   Camera,
-  Globe2,
   GraduationCap,
+  MapPin,
   Package,
   Smartphone,
   Sparkles,
@@ -195,10 +195,10 @@ export const galleryItems: GalleryItem[] = [
 export { aboutImage, heroImages } from '../config/images';
 
 export const stats: Stat[] = [
-  { value: '10k+', label: 'Happy Clients' },
-  { value: '500+', label: 'Verified Photographers' },
-  { value: '4.9★', label: 'App Rating' },
-  { value: '50+', label: 'Cities Worldwide' },
+  { value: 'Jaipur', label: 'Launch City' },
+  { value: 'Pre-launch', label: 'Building Now' },
+  { value: 'Open', label: 'Photographer Spots' },
+  { value: '4 steps', label: 'Find · Book · Shoot · Receive' },
 ];
 
 export const serviceTeasers = [
@@ -229,105 +229,104 @@ export const appFeatures = [
 export const howItWorksSteps = [
   {
     step: '01',
-    title: 'Search Nearby',
-    description: 'Enter your location and see verified photographers available right now.',
+    title: 'Find',
+    description: 'Browse verified photographers in Jaipur — compare styles, portfolios, and availability.',
     color: 'from-brand-pink-light to-brand-pink',
   },
   {
     step: '02',
-    title: 'Book Instantly',
-    description: 'Pick a time slot, confirm in seconds — no emails or waiting.',
+    title: 'Book',
+    description: 'Pick a time slot and confirm instantly. No DMs, no waiting, no guesswork.',
     color: 'from-brand-pink-soft to-brand-pink-light',
   },
   {
     step: '03',
-    title: 'Shoot & Chat',
-    description: 'Meet your photographer and coordinate details in-app.',
+    title: 'Shoot',
+    description: 'Meet your photographer and coordinate details in-app before and during the session.',
     color: 'from-brand-pink-light to-brand-pink',
   },
   {
     step: '04',
-    title: 'Get Your Photos',
-    description: 'Edited galleries delivered straight to your phone.',
+    title: 'Receive',
+    description: 'Edited galleries delivered straight to your phone when the shoot is done.',
     color: 'from-brand-pink to-brand-pink-light',
   },
 ];
 
-export const testimonials = [
+export const photographerBenefits = [
   {
-    name: 'Ananya Sharma',
-    role: 'Booked in Jaipur',
-    quote:
-      'Booked a photographer in under a minute before our trip to Hawa Mahal. Photos were stunning and delivered the same evening.',
-    rating: 5,
+    icon: 'camera' as const,
+    title: 'Your portfolio, your rates',
+    description: 'List your work, set your pricing, and control which shoots you take on.',
   },
   {
-    name: 'Rahul Mehta',
-    role: 'Corporate event client',
-    quote:
-      'Snapeeo made our product launch coverage effortless. Real-time booking and professional results — highly recommend.',
-    rating: 5,
+    icon: 'users' as const,
+    title: 'Clients come to you',
+    description: 'Stop chasing leads on Instagram. Customers find and book you through the platform.',
   },
   {
-    name: 'Priya Kapoor',
-    role: 'Pre-wedding shoot',
-    quote:
-      'Found the perfect photographer for our pre-wedding shoot. The app chat feature made planning so easy.',
-    rating: 5,
+    icon: 'rupee' as const,
+    title: 'Get paid on your terms',
+    description: 'Transparent bookings with clear scope — less haggling, more shooting.',
+  },
+  {
+    icon: 'sparkles' as const,
+    title: 'Early access in Jaipur',
+    description: 'Join before launch and be first in line when bookings open in your city.',
   },
 ];
 
 export const heroFeatures = [
   {
-    id: 'instant-booking',
+    id: 'find',
+    icon: MapPin,
+    title: 'Find in Jaipur',
+    description:
+      'Browse local photographers by style and availability — starting in Jaipur, expanding city by city.',
+    stat: 'Jaipur first',
+  },
+  {
+    id: 'book',
     icon: Zap,
     title: 'Book in seconds',
     description:
-      'Skip the back-and-forth. Browse verified photographers near you and confirm your session instantly.',
-    stat: '60 sec avg.',
+      'Skip the back-and-forth. Confirm your session on the platform — like ordering a ride, but for photography.',
+    stat: 'Instant booking',
   },
   {
-    id: 'delivered',
+    id: 'receive',
     icon: Smartphone,
-    title: 'Photos on your phone',
+    title: 'Receive in the app',
     description:
-      'See who’s available right now and receive beautifully edited galleries straight in the Snapeeo app.',
-    stat: 'Same-day delivery',
-  },
-  {
-    id: 'trusted',
-    icon: Globe2,
-    title: 'Trusted everywhere',
-    description:
-      'Join thousands of happy clients who book pro photographers across cities worldwide with confidence.',
-    stat: '50+ cities',
+      'Chat with your photographer, track your shoot, and get edited photos delivered to your phone.',
+    stat: 'End-to-end',
   },
 ];
 
 export const faqs = [
   {
-    question: 'How fast can I book a photographer?',
+    question: 'What is Snapeeo?',
     answer:
-      'Most bookings take under 60 seconds. Search your city, pick an available photographer, and confirm instantly.',
+      'Snapeeo is a photography marketplace — not a studio. We connect customers with independent photographers in Jaipur. Think Uber for rides, Snapeeo for photography: Find. Book. Shoot. Receive.',
   },
   {
-    question: 'Are Snapeeo photographers verified?',
+    question: 'Is Snapeeo live yet?',
     answer:
-      'Yes. Every photographer on Snapeeo passes identity verification, portfolio review, and background checks.',
+      'We are pre-launch and building in Jaipur right now. The app is coming soon — join the waitlist as a customer or apply early as a photographer.',
   },
   {
-    question: 'When do I receive my photos?',
+    question: 'How do I book a photographer?',
     answer:
-      'Delivery times vary by shoot type. Many sessions deliver edited galleries within 24–48 hours directly in the app.',
+      'Once live, you will browse verified photographers in Jaipur, pick a time slot, and confirm instantly in the app — no endless DMs or waiting for replies.',
   },
   {
-    question: 'Can I chat with my photographer before the shoot?',
+    question: 'I am a photographer — how do I join?',
     answer:
-      'Absolutely. Use in-app chat to share location details, shot lists, outfit ideas, and timing before your session.',
+      'Photographer onboarding is our top priority. Apply through our contact page to get early access, list your portfolio, and be first in line when bookings open in Jaipur.',
   },
   {
-    question: 'Which cities is Snapeeo available in?',
+    question: 'Are you expanding beyond Jaipur?',
     answer:
-      'Snapeeo is live in 50+ cities worldwide, including Jaipur, Delhi, Mumbai, Bangalore, and expanding rapidly.',
+      'Jaipur is our launch city. We will expand to more cities once the platform works well locally — no fake global scale, just honest growth.',
   },
 ];

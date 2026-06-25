@@ -506,6 +506,96 @@
   .polaroid img {
     @apply rounded-xl object-cover;
   }
+
+  .phone-mockup-shell {
+    animation: phoneMockupFloat 5s ease-in-out infinite;
+  }
+
+  .phone-mockup-glow {
+    animation: phoneMockupGlow 4s ease-in-out infinite;
+  }
+
+  .phone-mockup-banner {
+    position: relative;
+    overflow: hidden;
+    animation: phoneMockupBannerPulse 3s ease-in-out infinite;
+  }
+
+  .phone-mockup-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    animation: phoneMockupBannerShine 4s ease-in-out infinite;
+  }
+
+  .phone-mockup-card {
+    opacity: 0;
+    animation: phoneMockupSlideIn 0.55s ease-out forwards;
+  }
+
+  .phone-mockup-card:nth-child(1) {
+    animation-delay: 0.35s;
+  }
+
+  .phone-mockup-card:nth-child(2) {
+    animation-delay: 0.55s;
+  }
+
+  .phone-mockup-search {
+    animation: phoneMockupSearchFade 0.5s ease-out 0.15s both;
+  }
+
+  .phone-mockup-search-text {
+    display: inline-block;
+    min-height: 1em;
+    transition: opacity 0.25s ease;
+  }
+
+  .phone-mockup-search-cursor {
+    display: inline-block;
+    width: 1px;
+    height: 0.75rem;
+    margin-left: 1px;
+    vertical-align: middle;
+    background: #e94e89;
+    animation: phoneMockupSearchBlink 1s step-end infinite;
+  }
+
+  .phone-mockup-book-active {
+    animation: phoneMockupBookPulse 2.2s ease-out infinite;
+  }
+
+  .phone-mockup-nav-item {
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+
+  .phone-mockup-nav-item-active {
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .phone-mockup-shell,
+    .phone-mockup-glow,
+    .phone-mockup-banner,
+    .phone-mockup-banner::after,
+    .phone-mockup-card,
+    .phone-mockup-search,
+    .phone-mockup-search-cursor,
+    .phone-mockup-book-active {
+      animation: none !important;
+    }
+
+    .phone-mockup-card {
+      opacity: 1;
+    }
+  }
 }
 
 @layer utilities {
@@ -522,5 +612,92 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes phoneMockupFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.75deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.75deg);
+  }
+}
+
+@keyframes phoneMockupGlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes phoneMockupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes phoneMockupBannerPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px -4px rgba(233, 78, 137, 0.2);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 0 0 28px -2px rgba(233, 78, 137, 0.35);
+  }
+}
+
+@keyframes phoneMockupBannerShine {
+  0%,
+  70%,
+  100% {
+    transform: translateX(-120%);
+  }
+  85% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes phoneMockupSearchFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes phoneMockupSearchBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes phoneMockupBookPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(233, 78, 137, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(233, 78, 137, 0);
   }
 }

@@ -2,13 +2,13 @@ import { heroFeatures } from '../../data/content';
 
 export function FeatureBar() {
   return (
-    <section className="feature-strip section-light" aria-label="Why choose Snapeeo">
+    <section className="feature-strip section-light" aria-label="Why Snapeeo">
       <div className="mx-auto max-w-content px-4 md:px-8 lg:px-12">
         <div className="feature-strip-inner">
           <div className="mb-8 text-center md:mb-10">
-            <span className="section-pill-light mb-3 inline-flex">Why Snapeeo</span>
+            <span className="section-pill-light mb-3 inline-flex">The platform</span>
             <p className="color-heading mx-auto max-w-lg text-lg font-semibold md:text-xl">
-              Everything you need to capture life&apos;s best moments
+              A marketplace built for easy booking — for customers and photographers
             </p>
           </div>
 

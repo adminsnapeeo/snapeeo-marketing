@@ -10,7 +10,7 @@ import { GalleryStrip } from './components/home/GalleryStrip';
 import { Hero } from './components/home/Hero';
 import { HowItWorks } from './components/home/HowItWorks';
 import { ServicesPreview } from './components/home/ServicesPreview';
-import { Testimonials } from './components/home/Testimonials';
+import { PhotographerCTA } from './components/home/PhotographerCTA';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { ServicesGrid } from './components/services/ServicesGrid';
@@ -79,7 +79,7 @@ function App() {
               <div className="section-pink">
                 <HowItWorks />
                 <AppTeaser />
-                <Testimonials />
+                <PhotographerCTA />
                 <ServicesPreview />
                 <FAQ />
                 <DownloadBanner />
