@@ -15,13 +15,13 @@ export function DownloadBanner() {
           </div>
           <div className="flex-1">
             <span className="mb-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/90">
-              Pre-launch · Jaipur first
+              Pre-launch · Your city first
             </span>
             <h2 className="text-3xl font-bold text-white md:text-4xl">
               The app is coming soon
             </h2>
             <p className="mt-3 max-w-xl text-base text-white/90 md:text-lg">
-              We&apos;re building Snapeeo honestly — starting in Jaipur. Join the waitlist as a
+              We&apos;re building Snapeeo honestly — starting in your city. Join the waitlist as a
               customer or apply early as a photographer.
             </p>
           </div>
@@ -38,7 +38,7 @@ export function DownloadBanner() {
                 onClick={() => setActiveView('contact')}
               >
                 <Camera className="h-5 w-5" />
-                Apply as photographer
+                Join as a photographer
               </Button>
             </div>
             <AppStoreBadges light />

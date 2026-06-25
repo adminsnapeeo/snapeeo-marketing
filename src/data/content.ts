@@ -25,7 +25,7 @@ export const services: Service[] = [
   {
     id: 'pre-wedding',
     title: 'Pre-wedding Shoots',
-    description: 'Romantic storytelling in stunning locations across Jaipur and beyond.',
+    description: 'Romantic storytelling in stunning locations across your city and beyond.',
     icon: Sparkles,
     gradient: 'from-brand-pink-light/50 via-brand-pink-soft/25 to-transparent',
     image: getServiceCoverUrl('pre-wedding'),
@@ -145,19 +145,19 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 'g1',
     src: getStaticPhoto(0),
-    alt: 'Hawa Mahal landmark photography',
+    alt: 'Historic landmark photography',
     category: 'Travel',
   },
   {
     id: 'g2',
     src: getStaticPhoto(1),
-    alt: 'Jantar Mantar architectural shoot',
+    alt: 'Architectural landmark shoot',
     category: 'Travel',
   },
   {
     id: 'g3',
     src: getStaticPhoto(2),
-    alt: 'Jaipur heritage monument portrait',
+    alt: 'Heritage monument portrait',
     category: 'Travel',
   },
   {
@@ -195,7 +195,7 @@ export const galleryItems: GalleryItem[] = [
 export { aboutImage, heroImages } from '../config/images';
 
 export const stats: Stat[] = [
-  { value: 'Jaipur', label: 'Launch City' },
+  { value: 'Your city', label: 'Launch City' },
   { value: 'Pre-launch', label: 'Building Now' },
   { value: 'Open', label: 'Photographer Spots' },
   { value: '4 steps', label: 'Find · Book · Shoot · Receive' },
@@ -230,7 +230,7 @@ export const howItWorksSteps = [
   {
     step: '01',
     title: 'Find',
-    description: 'Browse verified photographers in Jaipur — compare styles, portfolios, and availability.',
+    description: 'Browse verified photographers in your city — compare styles, portfolios, and availability.',
     color: 'from-brand-pink-light to-brand-pink',
   },
   {
@@ -271,7 +271,7 @@ export const photographerBenefits = [
   },
   {
     icon: 'sparkles' as const,
-    title: 'Early access in Jaipur',
+    title: 'Early access in your city',
     description: 'Join before launch and be first in line when bookings open in your city.',
   },
 ];
@@ -280,10 +280,10 @@ export const heroFeatures = [
   {
     id: 'find',
     icon: MapPin,
-    title: 'Find in Jaipur',
+    title: 'Find in your city',
     description:
-      'Browse local photographers by style and availability — starting in Jaipur, expanding city by city.',
-    stat: 'Jaipur first',
+      'Browse local photographers by style and availability — launching in select cities, expanding from there.',
+    stat: 'Your city first',
   },
   {
     id: 'book',
@@ -307,26 +307,26 @@ export const faqs = [
   {
     question: 'What is Snapeeo?',
     answer:
-      'Snapeeo is a photography marketplace — not a studio. We connect customers with independent photographers in Jaipur. Think Uber for rides, Snapeeo for photography: Find. Book. Shoot. Receive.',
+      'Snapeeo is a photography marketplace — not a studio. We connect customers with independent photographers in your city. Think Uber for rides, Snapeeo for photography: Find. Book. Shoot. Receive.',
   },
   {
     question: 'Is Snapeeo live yet?',
     answer:
-      'We are pre-launch and building in Jaipur right now. The app is coming soon — join the waitlist as a customer or apply early as a photographer.',
+      'We are pre-launch and building in your city right now. The app is coming soon — join the waitlist as a customer or apply early as a photographer.',
   },
   {
     question: 'How do I book a photographer?',
     answer:
-      'Once live, you will browse verified photographers in Jaipur, pick a time slot, and confirm instantly in the app — no endless DMs or waiting for replies.',
+      'Once live, you will browse verified photographers in your city, pick a time slot, and confirm instantly in the app — no endless DMs or waiting for replies.',
   },
   {
     question: 'I am a photographer — how do I join?',
     answer:
-      'Photographer onboarding is our top priority. Apply through our contact page to get early access, list your portfolio, and be first in line when bookings open in Jaipur.',
+      'Photographer onboarding is our top priority. Apply through our contact page to get early access, list your portfolio, and be first in line when bookings open in your city.',
   },
   {
-    question: 'Are you expanding beyond Jaipur?',
+    question: 'Which cities are you launching in?',
     answer:
-      'Jaipur is our launch city. We will expand to more cities once the platform works well locally — no fake global scale, just honest growth.',
+      'We are launching in two cities at once — yours could be one of them. We will expand to more cities once the platform works well locally — no fake global scale, just honest growth.',
   },
 ];

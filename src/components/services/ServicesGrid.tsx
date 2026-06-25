@@ -17,7 +17,7 @@ export function ServicesGrid({ showBackLink = true }: ServicesGridProps) {
       <PageHero
         badge="On the platform"
         title="Shoot types you can book"
-        subtitle="Every category below connects you with independent photographers in Jaipur — browse portfolios and book through Snapeeo."
+        subtitle="Every category below connects you with independent photographers in your city — browse portfolios and book through Snapeeo."
       />
 
       <div className="section-page view-transition pb-16 md:pb-24">

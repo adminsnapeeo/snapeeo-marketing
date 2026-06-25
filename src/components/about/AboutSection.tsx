@@ -9,7 +9,7 @@ export function AboutSection() {
       <PageHero
         badge="Our mission"
         title="About Snapeeo"
-        subtitle="We're building the photography marketplace for Jaipur — connecting customers with local photographers. Find. Book. Shoot. Receive."
+        subtitle="We're building the photography marketplace for your city — connecting customers with local photographers. Find. Book. Shoot. Receive."
         align="left"
       />
 
@@ -23,18 +23,18 @@ export function AboutSection() {
                 photographers get discovered and paid through one app.
               </p>
               <p className="color-muted text-base leading-relaxed md:text-lg">
-                We&apos;re pre-launch and starting in Jaipur because we&apos;d rather build
-                something real in one city than claim global scale we don&apos;t have yet.
+                We&apos;re pre-launch and starting locally because we&apos;d rather build
+                something real on the ground than claim global scale we don&apos;t have yet.
                 Honest growth beats fake social proof every time.
               </p>
               <p className="color-muted text-base leading-relaxed md:text-lg">
-                Photographer onboarding is our top priority. If you shoot in Jaipur, we want
+                Photographer onboarding is our top priority. If you shoot in your city, we want
                 you on the platform before customers even download the app.
               </p>
             </div>
 
             <div className="group relative overflow-hidden rounded-3xl border border-[rgba(233,78,137,0.12)] bg-white shadow-[0_24px_60px_-10px_rgba(233,78,137,0.15)] transition-all duration-500 hover:border-[rgba(233,78,137,0.25)]">
-              <ResponsiveImage src={aboutImage} alt="Jaipur photographer on the Snapeeo platform" variant="about" />
+              <ResponsiveImage src={aboutImage} alt="Local photographer on the Snapeeo platform" variant="about" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#fce7f3]/50 via-transparent to-transparent" />
             </div>
           </div>

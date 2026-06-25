@@ -8,8 +8,8 @@ const photographers = [
 
 const searchPhrases = [
   'Search photographers...',
-  'Portrait near Hawa Mahal...',
-  'Pre-wedding in Jaipur...',
+  'Portrait near you...',
+  'Pre-wedding in your city...',
 ];
 
 const navItems = [
@@ -82,7 +82,7 @@ export function PhoneMockup() {
                 </p>
                 <div className="mt-0.5 flex items-center gap-1 text-[10px] text-ink-muted">
                   <MapPin className="h-3 w-3 text-brand-pink" />
-                  Jaipur, Rajasthan
+                  Your city
                 </div>
               </div>
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-brand-pink/25 bg-brand-pink-muted">

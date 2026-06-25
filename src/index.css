@@ -399,6 +399,13 @@
     color: #fff;
   }
 
+  .typewriter-cursor {
+    width: 2px;
+    height: 0.85em;
+    background: currentColor;
+    animation: phoneMockupSearchBlink 1s step-end infinite;
+  }
+
   .chip {
     @apply rounded-full bg-white px-5 py-2.5 text-sm font-medium transition-all duration-300;
     color: #6b7280;
@@ -588,7 +595,8 @@
     .phone-mockup-card,
     .phone-mockup-search,
     .phone-mockup-search-cursor,
-    .phone-mockup-book-active {
+    .phone-mockup-book-active,
+    .typewriter-cursor {
       animation: none !important;
     }
 

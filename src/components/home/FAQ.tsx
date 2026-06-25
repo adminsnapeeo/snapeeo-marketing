@@ -12,7 +12,7 @@ export function FAQ() {
         <SectionHeading
           light
           title="Questions & Answers"
-          subtitle="Everything you need to know about Snapeeo — the photography marketplace launching in Jaipur."
+          subtitle="Everything you need to know about Snapeeo — the photography marketplace launching in your city."
         />
 
         <div className="mx-auto max-w-3xl space-y-3">

@@ -52,7 +52,7 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
               </span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-white/80">
-              The photography marketplace for Jaipur — connecting customers with local photographers.
+              The photography marketplace for your city — connecting customers with local photographers.
               Find. Book. Shoot. Receive.
             </p>
             <p className="mb-3 text-sm font-semibold text-white">Find us</p>
@@ -95,7 +95,7 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
           <div>
             <h3 className="mb-4 text-lg font-bold text-white">Stay Updated</h3>
             <p className="mb-4 text-sm text-white/80">
-              Launch updates for Jaipur — for customers and photographers.
+              Launch updates for your city — for customers and photographers.
             </p>
             <form onSubmit={handleNewsletter} className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <input

@@ -60,7 +60,7 @@ export function Header() {
 
           <div className="hidden items-center gap-3 md:flex">
             <Button size="sm" variant="outline" onClick={() => handleNavigate('contact')}>
-              Join as photographer
+              Join as a photographer
             </Button>
             <Button size="sm" onClick={() => handleNavigate('home', 'how-it-works')}>
               Find a photographer

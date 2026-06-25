@@ -96,7 +96,7 @@ After deploy, verify:
 
 The contact form is UI-only (no API). Contact details shown on site:
 
-- Address: Hawa Mahal, Jaipur, Rajasthan
+- Address: India (launch cities TBA)
 - Email: admin.snapeeo@gmail.com
 - Phone: +91 9879879879
 

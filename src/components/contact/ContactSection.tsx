@@ -9,7 +9,7 @@ export function ContactSection() {
       <PageHero
         badge="Contact"
         title="Get in Touch"
-        subtitle="Customers, photographers, partners — we're pre-launch in Jaipur and happy to hear from you."
+        subtitle="Customers, photographers, partners — we're pre-launch in your city and happy to hear from you."
       />
 
       <div className="section-page view-transition pb-16 md:pb-24">
@@ -19,7 +19,7 @@ export function ContactSection() {
               Photographers — apply for early access
             </h2>
             <p className="color-muted mt-2 max-w-2xl text-sm leading-relaxed md:text-base">
-              We&apos;re onboarding Jaipur photographers before launch. Send us your portfolio link,
+              We&apos;re onboarding local photographers before launch. Send us your portfolio link,
               Instagram handle, and the types of shoots you do — we&apos;ll get back to you first.
             </p>
           </div>
@@ -47,7 +47,7 @@ export function ContactSection() {
                     id="message"
                     rows={5}
                     required
-                    placeholder="I'm a photographer in Jaipur — here's my portfolio..."
+                    placeholder="I'm a photographer in your city — here's my portfolio..."
                     className="input-dark resize-none"
                   />
                 </div>
@@ -60,7 +60,7 @@ export function ContactSection() {
 
             <div className="space-y-5">
               {[
-                { icon: MapPin, title: 'Based in', detail: 'Jaipur, Rajasthan, India' },
+                { icon: MapPin, title: 'Based in', detail: 'India' },
                 { icon: Mail, title: 'Email', detail: 'connect.snapeeo@gmail.com' },
                 { icon: Phone, title: 'Phone', detail: '+91 8581956688' },
                 { icon: Clock, title: 'Hours', detail: 'Mon – Fri: 9am – 6pm IST\nSat: 10am – 4pm IST' },
