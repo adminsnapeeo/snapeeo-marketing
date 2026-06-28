@@ -47,8 +47,9 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
               <div className="icon-badge icon-badge-on-pink h-9 w-9">
                 <Aperture className="h-4 w-4" />
               </div>
-              <span className="text-xl font-bold text-white">
-                Snap<span className="text-white/85">eeo</span>
+              <span className="text-xl font-bold">
+                <span className="text-white">Snap</span>
+                <span className="footer-logo-eeo">eeo</span>
               </span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-white/80">
