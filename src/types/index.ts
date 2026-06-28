@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 
-export type ViewId = 'home' | 'services' | 'about' | 'contact';
+export type ViewId = 'home' | 'services' | 'about' | 'contact' | 'privacy' | 'terms';
 
 export type GalleryCategory = 'All' | 'Travel' | 'Portraits' | 'Commercial';
 

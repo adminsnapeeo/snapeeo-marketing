@@ -13,6 +13,8 @@ import { ServicesPreview } from './components/home/ServicesPreview';
 import { PhotographerCTA } from './components/home/PhotographerCTA';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
+import { PrivacyPolicySection } from './components/legal/PrivacyPolicySection';
+import { TermsOfServiceSection } from './components/legal/TermsOfServiceSection';
 import { WaveDivider } from './components/ui/WaveDivider';
 import { ServicesGrid } from './components/services/ServicesGrid';
 import { ServicePortfolio } from './components/services/ServicePortfolio';
@@ -127,6 +129,8 @@ function App() {
           )}
           {activeView === 'about' && <AboutSection />}
           {activeView === 'contact' && <ContactSection />}
+          {activeView === 'privacy' && <PrivacyPolicySection />}
+          {activeView === 'terms' && <TermsOfServiceSection />}
         </main>
         {activeView !== 'home' && <Footer onNavigate={setActiveView} />}
         <LightboxModal />

@@ -9,7 +9,7 @@ type SocialIcon = LucideIcon | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
 const socialLinks: { icon: SocialIcon; label: string; href: string }[] = [
   { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/snapeeo?igsh=MTNwdjBrMzN2NXBxag%3D%3D' },
   { icon: WhatsAppIcon, label: 'WhatsApp', href: 'https://wa.me/message/Y2MO3QU2RYZJE1' },
-  { icon: Youtube, label: 'YouTube', href: 'https://youtube.com' },
+  { icon: Youtube, label: 'YouTube', href: 'https://youtube.com/@snapeeo?si=Q7CA34eC0fy4Zbeq' },
   // { icon: PinterestIcon, label: 'Pinterest', href: 'https://pinterest.com' },
   // { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
 ];

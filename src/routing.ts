@@ -58,6 +58,14 @@ export function parseRoute(): AppRoute {
     return { view: 'contact', serviceId: null, sectionId: null };
   }
 
+  if (pathname === '/privacy') {
+    return { view: 'privacy', serviceId: null, sectionId: null };
+  }
+
+  if (pathname === '/terms') {
+    return { view: 'terms', serviceId: null, sectionId: null };
+  }
+
   return { view: 'home', serviceId: null, sectionId: null };
 }
 
@@ -84,6 +92,12 @@ export function buildRouteUrl(
       break;
     case 'contact':
       path = `${base}/contact`;
+      break;
+    case 'privacy':
+      path = `${base}/privacy`;
+      break;
+    case 'terms':
+      path = `${base}/terms`;
       break;
     default:
       path = `${base}/`;

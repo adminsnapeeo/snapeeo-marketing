@@ -18,9 +18,9 @@ const quickLinks: { label: string; view: ViewId; sectionId?: string }[] = [
   { label: 'Contact', view: 'contact' },
 ];
 
-const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
+const legalLinks: { label: string; view?: ViewId; href?: string }[] = [
+  { label: 'Privacy Policy', view: 'privacy' },
+  { label: 'Terms of Service', view: 'terms' },
   { label: 'App Support', href: '#' },
 ];
 
@@ -82,12 +82,22 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
             <ul className="space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-medium text-white/80 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
+                  {link.view ? (
+                    <button
+                      type="button"
+                      onClick={() => onNavigate(link.view!)}
+                      className="text-sm font-medium text-white/80 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm font-medium text-white/80 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
