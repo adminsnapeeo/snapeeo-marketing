@@ -17,9 +17,10 @@ import {
   getServicePortfolioImageFallbacks,
   getServicePortfolioImageUrl,
   getStaticPhoto,
+  onboardPhotographerImages,
   PORTFOLIO_GALLERY_BASENAMES,
 } from '../config/images';
-import type { GalleryItem, Service, ServicePortfolioItem, Stat } from '../types';
+import type { GalleryItem, LaunchMetrics, OnboardedPhotographer, Service, ServicePortfolioItem, Stat, TrustBadge } from '../types';
 
 export const services: Service[] = [
   {
@@ -194,10 +195,54 @@ export const galleryItems: GalleryItem[] = [
 
 export { aboutImage, heroImages } from '../config/images';
 
+export const launchMetrics: LaunchMetrics = {
+  photographersOnboarded: 8,
+  waitlistUsers: 124,
+};
+
+/** Update with real onboarded photographers as you sign them up. */
+export const onboardedPhotographers: OnboardedPhotographer[] = [
+  {
+    id: 'arjun-m',
+    name: 'Arjun M.',
+    rating: 4.9,
+    specialty: 'Portrait & Events',
+    photo: onboardPhotographerImages[3],
+  },
+  {
+    id: 'priya-k',
+    name: 'Priya K.',
+    rating: 5.0,
+    specialty: 'Pre-wedding',
+    photo: onboardPhotographerImages[1],
+  },
+  {
+    id: 'rahul-s',
+    name: 'Rahul S.',
+    rating: 4.8,
+    specialty: 'Travel & Commercial',
+    photo: onboardPhotographerImages[2],
+  },
+  {
+    id: 'sneha-v',
+    name: 'Sneha V.',
+    rating: 4.9,
+    specialty: 'Maternity & Family',
+    photo: onboardPhotographerImages[0],
+  },
+];
+
+export const trustBadges: TrustBadge[] = [
+  { id: 'identity', label: 'Identity Verified' },
+  { id: 'mobile', label: 'Mobile Verified' },
+  { id: 'portfolio', label: 'Portfolio Reviewed' },
+  { id: 'quality', label: 'Quality Screened' },
+];
+
 export const stats: Stat[] = [
-  { value: 'Your city', label: 'Launch City' },
-  { value: 'Pre-launch', label: 'Building Now' },
-  { value: 'Open', label: 'Photographer Spots' },
+  { value: String(launchMetrics.photographersOnboarded), label: 'Photographers onboarded' },
+  { value: String(launchMetrics.waitlistUsers), label: 'Waitlist users' },
+  { value: 'Pre-launch', label: 'Building now' },
   { value: '4 steps', label: 'Find · Book · Shoot · Receive' },
 ];
 
@@ -327,6 +372,6 @@ export const faqs = [
   {
     question: 'Which cities are you launching in?',
     answer:
-      'We are launching in two cities at once — yours could be one of them. We will expand to more cities once the platform works well locally — no fake global scale, just honest growth.',
+      'Launching in your city first, expanding city by city across India. We will grow locally before claiming wider reach — no fake global scale, just honest growth.',
   },
 ];

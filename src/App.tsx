@@ -9,8 +9,10 @@ import { FeatureBar } from './components/home/FeatureBar';
 import { GalleryStrip } from './components/home/GalleryStrip';
 import { Hero } from './components/home/Hero';
 import { HowItWorks } from './components/home/HowItWorks';
-import { ServicesPreview } from './components/home/ServicesPreview';
+import { PhotographerOnBoard } from './components/home/PhotographerOnBoard';
 import { PhotographerCTA } from './components/home/PhotographerCTA';
+import { ServicesPreview } from './components/home/ServicesPreview';
+import { TrustSection } from './components/home/TrustSection';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { PrivacyPolicySection } from './components/legal/PrivacyPolicySection';
@@ -81,6 +83,13 @@ function App() {
               <GalleryStrip />
               <div className="section-pink">
                 <HowItWorks />
+                <TrustSection />
+                <div className="relative -mb-px">
+                  <WaveDivider fill="#FFFFFF" />
+                </div>
+              </div>
+              <div className="section-light">
+                <PhotographerOnBoard />
                 <div className="relative -mb-px">
                   <WaveDivider fill="#52A999" />
                 </div>
@@ -94,10 +103,10 @@ function App() {
               <div className="section-pink">
                 <PhotographerCTA />
                 <div className="relative -mb-px">
-                  <WaveDivider fill="#52A999" />
+                  <WaveDivider fill="#FFFFFF" />
                 </div>
               </div>
-              <div className="section-teal">
+              <div className="section-light">
                 <ServicesPreview />
                 <div className="relative -mb-px">
                   <WaveDivider fill="#E94E89" />

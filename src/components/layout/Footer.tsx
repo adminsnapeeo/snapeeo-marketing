@@ -12,6 +12,7 @@ interface FooterProps {
 
 const quickLinks: { label: string; view: ViewId; sectionId?: string }[] = [
   { label: 'Home', view: 'home' },
+  { label: 'Trust & Early Access', view: 'home', sectionId: 'trust' },
   { label: 'For Photographers', view: 'home', sectionId: 'for-photographers' },
   { label: 'Services', view: 'services' },
   { label: 'About', view: 'about' },

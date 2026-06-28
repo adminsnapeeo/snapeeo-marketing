@@ -108,7 +108,7 @@
   }
 
   .footer-logo-eeo {
-    color: #52a999;
+    color: #f5d061;
   }
 
   .input-on-pink {
@@ -162,6 +162,28 @@
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .trust-badge {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold md:text-sm;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fff;
+  }
+
+  .trust-photographer-card {
+    @apply transition-transform duration-300;
+  }
+
+  .trust-photographer-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .trust-photographer-chip-light {
+    @apply rounded-md px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide;
+    background: #fff0f5;
+    color: #e94e89;
+    border: 1px solid rgba(233, 78, 137, 0.12);
   }
 
   .btn-outline-on-dark {

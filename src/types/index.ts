@@ -25,6 +25,25 @@ export interface Stat {
   label: string;
 }
 
+export interface LaunchMetrics {
+  photographersOnboarded: number;
+  waitlistUsers: number;
+}
+
+export interface TrustBadge {
+  id: string;
+  label: string;
+}
+
+export interface OnboardedPhotographer {
+  id: string;
+  name: string;
+  rating: number;
+  specialty: string;
+  photo: string;
+  photoFallbacks?: string[];
+}
+
 export interface GalleryStripItem {
   id: string;
   src: string;

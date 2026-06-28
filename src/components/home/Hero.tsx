@@ -21,7 +21,7 @@ export function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="animate-slide-up text-center lg:text-left">
             <span className="hero-pill-gold mb-5 inline-block max-w-full text-pretty leading-snug">
-              <TypewriterText text="Your city's photography marketplace · Pre-launch" />
+              <TypewriterText text="Join Your City's First Photography Marketplace · Pre-launch" />
             </span>
             <h1 className="color-heading text-balance text-4xl font-bold leading-[1.15] md:text-5xl lg:text-[3.25rem]">
               Find.{' '}
@@ -52,9 +52,9 @@ export function Hero() {
                 <Gift className="h-4 w-4" />
               </span>
               <p className="hero-waitlist-promo-text">
-                <span className="hero-waitlist-promo-lead">Join the Waitlist</span>
+                <span className="hero-waitlist-promo-lead">Early Access Open — Be the First to Book</span>
                 <span className="hero-waitlist-promo-separator" aria-hidden="true">
-                  —
+                  ·
                 </span>
                 <span className="hero-waitlist-promo-credits">Get ₹500 Credits</span>
               </p>

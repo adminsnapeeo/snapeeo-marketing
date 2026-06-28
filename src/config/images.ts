@@ -3,6 +3,15 @@
  */
 export const IMAGE_DIR = '/images';
 export const GALLERY_STRIP_DIR = `${IMAGE_DIR}/gallery`;
+export const ONBOARDS_DIR = `${IMAGE_DIR}/onboards`;
+
+/** Onboarded photographer card photos — public/images/onboards/ */
+export const onboardPhotographerImages = [
+  `${ONBOARDS_DIR}/onboard_photographer1.png`,
+  `${ONBOARDS_DIR}/onboard_photographer2.png`,
+  `${ONBOARDS_DIR}/onboard_photographer3.png`,
+  `${ONBOARDS_DIR}/onboard_photographer4.png`,
+] as const;
 
 export const staticPhotos = [
   `${IMAGE_DIR}/hawa-mahal.jpg`,
