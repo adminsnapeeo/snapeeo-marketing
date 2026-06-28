@@ -20,7 +20,7 @@ export function ServiceCard({
   return (
     <article
       id={`service-${service.id}`}
-      className="group surface-card surface-card-hover flex flex-col overflow-hidden transition-all duration-300"
+      className="service-card group surface-card surface-card-hover transition-all duration-300"
     >
       <div className="service-image-frame">
         <ResponsiveImage
@@ -34,26 +34,26 @@ export function ServiceCard({
         <div
           className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-40 transition-opacity duration-300 group-hover:opacity-55`}
         />
-        <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-xs font-bold text-[#e94e89] shadow-sm">
+        <span className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-xs font-bold text-[#e94e89] shadow-sm sm:left-4 sm:top-4">
           {String(index + 1).padStart(2, '0')}
         </span>
-        <div className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/95 shadow-sm transition-transform duration-300 group-hover:scale-110">
+        <div className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/95 shadow-sm transition-transform duration-300 group-hover:scale-110 sm:bottom-4 sm:right-4 sm:h-11 sm:w-11">
           <Icon className="h-5 w-5 text-[#e94e89]" />
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="color-heading text-xl font-bold md:text-2xl">
+      <div className="service-card-body">
+        <h3 className="color-heading line-clamp-2 text-lg font-bold leading-snug sm:text-xl md:text-2xl">
           {service.title}
         </h3>
-        <p className="color-muted mt-3 flex-1 text-sm leading-relaxed md:text-base">
+        <p className="color-muted mt-2 line-clamp-3 flex-1 text-sm leading-relaxed sm:mt-3 md:text-base">
           {service.description}
         </p>
         <Button
           type="button"
           variant="outline"
           onClick={() => onViewPortfolio(service.id)}
-          className="mt-6 w-full sm:w-auto"
+          className="mt-4 w-full shrink-0 sm:mt-5"
         >
           View Portfolio
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />

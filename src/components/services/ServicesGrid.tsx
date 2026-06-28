@@ -21,8 +21,8 @@ export function ServicesGrid({ showBackLink = true }: ServicesGridProps) {
       />
 
       <div className="section-page view-transition pb-16 md:pb-24">
-        <section className="mx-auto max-w-content px-4 pt-10 md:px-8 md:pt-12 lg:px-12">
-          <div className="mb-10 flex flex-wrap justify-center gap-3">
+        <section className="mx-auto w-full min-w-0 max-w-content px-4 pt-10 md:px-8 md:pt-12 lg:px-12">
+          <div className="mb-8 flex flex-wrap justify-center gap-2.5 sm:mb-10 sm:gap-3">
             {services.map((service, i) => (
               <button
                 key={service.id}
@@ -35,7 +35,7 @@ export function ServicesGrid({ showBackLink = true }: ServicesGridProps) {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="services-grid items-stretch">
             {services.map((service, index) => (
               <ServiceCard
                 key={service.id}
