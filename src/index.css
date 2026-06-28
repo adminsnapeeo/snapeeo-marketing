@@ -545,6 +545,62 @@
     }
   }
 
+  .hero-waitlist-promo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 100%;
+    padding: 0.85rem 1.15rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #fff5f9 0%, #ffffff 45%, #f0faf8 100%);
+    border: 1px solid rgba(233, 78, 137, 0.22);
+    box-shadow:
+      0 10px 28px -12px rgba(233, 78, 137, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-waitlist-promo-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #e94e89 0%, #d63d78 100%);
+    box-shadow: 0 4px 14px -4px rgba(233, 78, 137, 0.55);
+  }
+
+  .hero-waitlist-promo-text {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  .hero-waitlist-promo-lead {
+    color: #e94e89;
+  }
+
+  .hero-waitlist-promo-separator {
+    margin: 0 0.35rem;
+    color: #52a999;
+    font-weight: 600;
+  }
+
+  .hero-waitlist-promo-credits {
+    color: #b8860b;
+  }
+
+  @media (min-width: 640px) {
+    .hero-waitlist-promo-text {
+      font-size: 1rem;
+    }
+  }
+
   .section-pill-pink {
     display: inline-flex;
     align-items: center;

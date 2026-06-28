@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Gift } from 'lucide-react';
 import { IMAGE_DIR } from '../../config/images';
 import { ResponsiveImage } from '../ui/ResponsiveImage';
 import { Button } from '../ui/Button';
@@ -46,6 +46,18 @@ export function Hero() {
                 Join as a photographer
                 <ArrowRight className="h-5 w-5 shrink-0" />
               </Button>
+            </div>
+            <div className="hero-waitlist-promo mx-auto mt-6 w-fit max-w-full lg:mx-0">
+              <span className="hero-waitlist-promo-icon" aria-hidden="true">
+                <Gift className="h-4 w-4" />
+              </span>
+              <p className="hero-waitlist-promo-text">
+                <span className="hero-waitlist-promo-lead">Join the Waitlist</span>
+                <span className="hero-waitlist-promo-separator" aria-hidden="true">
+                  —
+                </span>
+                <span className="hero-waitlist-promo-credits">Get ₹500 Credits</span>
+              </p>
             </div>
           </div>
 
