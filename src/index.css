@@ -109,10 +109,6 @@
     color: #ffffff;
   }
 
-  .footer-logo-eeo {
-    color: #f5d061;
-  }
-
   .input-on-pink {
     @apply w-full rounded-2xl px-4 py-3 text-sm transition-all duration-300;
     background: rgba(255, 255, 255, 0.15);
@@ -598,10 +594,11 @@
   }
 
   .hero-waitlist-promo {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.75rem;
     max-width: 100%;
+    text-align: left;
     padding: 0.85rem 1.15rem;
     border-radius: 1rem;
     background: linear-gradient(135deg, #fff5f9 0%, #ffffff 45%, #f0faf8 100%);
@@ -626,11 +623,14 @@
 
   .hero-waitlist-promo-text {
     margin: 0;
+    flex: 1;
+    min-width: 0;
     font-size: 0.9375rem;
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: 0.01em;
-    text-wrap: balance;
+    text-align: left;
+    text-wrap: pretty;
   }
 
   .hero-waitlist-promo-lead {
@@ -647,7 +647,34 @@
     color: #b8860b;
   }
 
+  @media (max-width: 639px) {
+    .hero-waitlist-promo {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .hero-waitlist-promo-text {
+      flex: none;
+      text-align: center;
+    }
+
+    .hero-waitlist-promo-separator {
+      display: none;
+    }
+
+    .hero-waitlist-promo-credits {
+      display: block;
+      margin-top: 0.2rem;
+    }
+  }
+
   @media (min-width: 640px) {
+    .hero-waitlist-promo {
+      align-items: center;
+    }
+
     .hero-waitlist-promo-text {
       font-size: 1rem;
     }

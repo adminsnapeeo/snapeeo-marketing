@@ -48,10 +48,7 @@ export function Footer({ onNavigate, embedded = false }: FooterProps) {
               <div className="icon-badge icon-badge-on-pink h-9 w-9">
                 <Aperture className="h-4 w-4" />
               </div>
-              <span className="text-xl font-bold">
-                <span className="text-white">Snap</span>
-                <span className="footer-logo-eeo">eeo</span>
-              </span>
+              <span className="text-xl font-bold text-white">Snapeeo</span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-white/80">
               The photography marketplace for your city — connecting customers with local photographers.

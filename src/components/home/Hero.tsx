@@ -47,7 +47,7 @@ export function Hero() {
                 <ArrowRight className="h-5 w-5 shrink-0" />
               </Button>
             </div>
-            <div className="hero-waitlist-promo mx-auto mt-6 w-fit max-w-full lg:mx-0">
+            <div className="hero-waitlist-promo mt-6 mx-auto w-fit max-w-full lg:mx-0">
               <span className="hero-waitlist-promo-icon" aria-hidden="true">
                 <Gift className="h-4 w-4" />
               </span>

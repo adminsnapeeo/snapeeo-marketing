@@ -22,15 +22,20 @@ export function ServicesGrid({ showBackLink = true }: ServicesGridProps) {
 
       <div className="section-page view-transition pb-16 md:pb-24">
         <section className="mx-auto w-full min-w-0 max-w-content px-4 pt-10 md:px-8 md:pt-12 lg:px-12">
-          <div className="mb-8 flex flex-wrap justify-center gap-2.5 sm:mb-10 sm:gap-3">
+          <div className="mb-8 grid min-w-0 grid-cols-3 gap-1.5 sm:mb-10 sm:gap-2 md:flex md:flex-wrap md:justify-center md:gap-3">
             {services.map((service, i) => (
               <button
                 key={service.id}
                 type="button"
                 onClick={() => goToService(service.id)}
-                className="chip px-4 py-1.5 text-xs md:text-sm"
+                className="chip flex w-full min-w-0 items-center justify-start gap-1 px-2 py-1.5 text-[11px] leading-tight sm:px-2.5 sm:text-xs md:w-auto md:justify-center md:gap-0 md:px-4 md:py-1.5 md:text-sm"
               >
-                {String(i + 1).padStart(2, '0')}. {service.title.split(' ')[0]}
+                <span className="w-6 shrink-0 tabular-nums text-left md:w-auto">
+                  {String(i + 1).padStart(2, '0')}.
+                </span>
+                <span className="min-w-0 truncate md:truncate-none">
+                  {service.title.split(' ')[0]}
+                </span>
               </button>
             ))}
           </div>
