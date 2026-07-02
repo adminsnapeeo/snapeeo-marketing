@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-pink: #f472b6;
+  --color-brand-pink-dark: #ec4899;
+  --color-brand-teal: #2dd4bf;
+  --color-brand-teal-muted: #5eead4;
+  --color-surface-dark: #0b0f14;
+  --color-surface-elevated: #1c2430;
+  --font-display: "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: #0b0f14;
+  color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  isolation: isolate;
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 50%, #db2777 100%);
+}
+
+.glass-panel {
+  background: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

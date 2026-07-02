@@ -1,0 +1,15 @@
+services:
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_ROOT_DOMAIN: ${VITE_ROOT_DOMAIN}
+        VITE_WEB_ORIGIN: ${VITE_WEB_ORIGIN}
+        VITE_ADMIN_ORIGIN: ${VITE_ADMIN_ORIGIN}
+        VITE_COOKIE_DOMAIN: ${VITE_COOKIE_DOMAIN}
+    image: snapeeo-admin:latest
+    container_name: snapeeo-admin
+    ports:
+      - "${ADMIN_PORT:-8081}:80"
+    restart: unless-stopped
